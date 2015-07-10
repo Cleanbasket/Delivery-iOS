@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Order.h"
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    int selectedIndex;
+    NSMutableArray *titleArray;
+    NSArray *subtitleArray;
+    NSArray *textArray;
+}
 
-
+@property NSArray<Order> *dataDropOffArray;
+@property (strong, nonatomic) UIButton *buttonFinish;
 @end
-
