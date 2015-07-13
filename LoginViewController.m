@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
 #import "CBConstants.h"
+#import "Keychain.h"
 
 @interface LoginViewController () {
     bool success;
@@ -25,9 +26,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
-    if ([cookies count] > 0) {
-        [self performSegueWithIdentifier:@"loginToList" sender:self];
+    if ([self getUserDefault]) {
+        [_userIDTextField setText:[self getUserDefault]];
+    
+        Keychain *keychain = [[Keychain alloc] initWithService:@"CB" withGroup:nil];
+        NSData *passwordData = [keychain find:[self getUserDefault]];
+        if (passwordData) {
+            [_passwordTextField setText:[[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding]];
+            [self performSegueWithIdentifier:@"loginToList" sender:self];
+//            [[self buttonLogin] sendActionsForControlEvents:UIControlEventTouchUpInside];
+            NSLog(@"Keychain is found");
+        } else {
+            NSLog(@"Keychain data not found");
+        }
     }
 }
 
@@ -40,12 +51,25 @@
     
 }
 
-- (BOOL)signIn {
-    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
-    if ([cookies count] > 0) {
-        return true;
-    }
+- (NSString *)getUserDefault {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
+    return [userDefaults objectForKey:@"email"];
+}
+                            
+- (void)saveUserDefault {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+    [userDefaults setObject:[_userIDTextField text] forKey:@"email"];
+    
+    Keychain *keychain = [[Keychain alloc]initWithService:@"CB" withGroup:nil];
+    NSData *passwordAsValue = [[_passwordTextField text] dataUsingEncoding:NSUTF8StringEncoding];
+    if ([keychain insert :[_userIDTextField text] :passwordAsValue]) {
+        NSLog(@"data added to keychain: %@ %@", [_userIDTextField text], passwordAsValue);
+    }
+}
+
+- (BOOL)signIn {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary: @{
                                                                                        @"email": [_userIDTextField text], @"password": [_passwordTextField text], @"remember": @"true", @"regid": @"" }];
     
@@ -72,6 +96,8 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                 });
+                
+                [self saveUserDefault];
                 
                 success = true;
                 dispatch_semaphore_signal(semaphore);
@@ -128,6 +154,12 @@
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     
     return success;
+}
+
+- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([self shouldPerformSegueWithIdentifier:identifier sender:sender]) {
+        [super performSegueWithIdentifier:identifier sender:sender];
+    }
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {

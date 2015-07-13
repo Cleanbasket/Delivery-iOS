@@ -52,8 +52,6 @@
                                                           options: NSJSONReadingMutableContainers
                                                             error: nil];
         [self getDeliverData];
-
-        NSLog(@"First Success");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
     }];
@@ -72,10 +70,7 @@
         [dataRawArray addObjectsFromArray:[NSJSONSerialization JSONObjectWithData: [responseObject[@"data"] dataUsingEncoding:NSUTF8StringEncoding]
                                                                              options: NSJSONReadingMutableContainers
                                                                                error: nil]];
-        
         [self sortData];
-        
-        NSLog(@"First Success");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
     }];
@@ -104,8 +99,6 @@
     
     //Set index to -1 saying no cell is expanded or should expand.
     selectedIndex = -1;
-    
-    [self getData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -169,7 +162,10 @@
     NSString *addr_remainder =[order addr_remainder];
     
     NSRange needleRange = NSMakeRange(0, 16);
-    NSString *datetime = [[order pickup_date] substringWithRange:needleRange];
+    
+    NSString *datetime;
+    if (state < 3) datetime = [[order pickup_date] substringWithRange:needleRange];
+    else datetime = [[order dropoff_date] substringWithRange:needleRange];
     
     NSArray<Item> *items = [order item];
     
@@ -181,8 +177,7 @@
     cell.itemLabel.text = [self getItemList:items];
     cell.memoLabel.text = [order memo];
     
-    buttonFinish = cell.buttonFinish;
-    buttonFinish.tag = state;
+    cell.tag = state;
     
     cell.clipsToBounds = YES;
     

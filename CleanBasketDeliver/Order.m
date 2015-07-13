@@ -34,10 +34,10 @@
         self.state = [dictionary[@"state"] integerValue];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss.S"];
         
-        if (self.state < 3) self.order_date = [dateFormatter dateFromString:dictionary[@"pickup_date"]];
-        else self.order_date = [dateFormatter dateFromString:dictionary[@"dropoff_date"]];
+        if (self.state < 3) self.order_date = [dateFormatter dateFromString:self.pickup_date];
+        else self.order_date = [dateFormatter dateFromString:self.dropoff_date];
     }
     
     return self;

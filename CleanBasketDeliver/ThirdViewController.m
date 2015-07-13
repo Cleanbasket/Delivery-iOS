@@ -1,17 +1,17 @@
 //
-//  SecondViewController.m
+//  ThirdViewController.m
 //  CleanBasketDeliver
 //
-//  Created by 강한용 on 2015. 6. 2..
+//  Created by 강한용 on 2015. 7. 13..
 //  Copyright (c) 2015년 강한용. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "ThirdViewController.h"
 #import "ExpandingCell.h"
 #import "AFNetworking.h"
 #import "order.h"
 
-@interface SecondViewController () {
+@interface ThirdViewController () {
     AFHTTPRequestOperationManager *afManager;
 }
 
@@ -19,8 +19,8 @@
 
 @end
 
-@implementation SecondViewController
-@synthesize dataPickUpArray, buttonFinish;
+@implementation ThirdViewController
+@synthesize dataDropOffArray, buttonFinish;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:@"FirstViewController" bundle:nil];
@@ -42,15 +42,15 @@
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
     NSString* root = [dict objectForKey:@"ROOT"];
-    NSString* address = [dict objectForKey:@"DELIVERER_PICKUP"];
+    NSString* address = [dict objectForKey:@"DELIVERER_DROPOFF"];
     
     afManager = [AFHTTPRequestOperationManager manager];
     afManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [afManager setRequestSerializer:[AFHTTPRequestSerializer new]];
     [afManager POST:[NSString stringWithFormat:@"%@%@", root, address] parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        dataPickUpArray = [NSJSONSerialization JSONObjectWithData: [responseObject[@"data"] dataUsingEncoding:NSUTF8StringEncoding]
-                                                    options: NSJSONReadingMutableContainers
-                                                        error: nil];
+        dataDropOffArray = [NSJSONSerialization JSONObjectWithData: [responseObject[@"data"] dataUsingEncoding:NSUTF8StringEncoding]
+                                                          options: NSJSONReadingMutableContainers
+                                                            error: nil];
         [self.tableView reloadData];
         NSLog(@"Second Success");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -77,7 +77,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return dataPickUpArray.count;
+    return dataDropOffArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -89,7 +89,7 @@
         cell = [nib objectAtIndex:0];
     }
     
-    NSDictionary *order = [dataPickUpArray objectAtIndex:indexPath.row];
+    NSDictionary *order = [dataDropOffArray objectAtIndex:indexPath.row];
     NSInteger state = [[order objectForKey:@"state"] integerValue];
     
     // Later
@@ -118,7 +118,7 @@
         cell.itemLabel.textColor = [UIColor blackColor];
         cell.memoLabel.textColor = [UIColor blackColor];
     }
-
+    
     if (state < 3)
         cell.typeLabel.text = @"수거";
     else
@@ -132,7 +132,7 @@
     NSString *addr_remainder =[order objectForKey:@"addr_remainder"];
     
     NSRange needleRange = NSMakeRange(0, 16);
-    NSString *datetime = [[order objectForKey:@"pickup_date"] substringWithRange:needleRange];
+    NSString *datetime = [[order objectForKey:@"dropoff_date"] substringWithRange:needleRange];
     
     cell.datetimeLabel.text = datetime;
     cell.orderNumberLabel.text = [order objectForKey:@"order_number"];

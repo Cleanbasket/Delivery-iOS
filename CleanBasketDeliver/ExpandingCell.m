@@ -96,4 +96,9 @@
     }
 }
 
+- (IBAction)callPhone:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [contactLabel text]]]];
+    NSLog(@"Phone Call");
+}
+
 @end
