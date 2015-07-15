@@ -38,6 +38,8 @@
 		147BCAEA1B1DE519008A3404 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 147BCAE91B1DE519008A3404 /* Address.plist */; };
 		147BCAF21B2092AA008A3404 /* ExpandingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147BCAF11B2092AA008A3404 /* ExpandingCell.xib */; };
 		147BCAF81B209481008A3404 /* ExpandingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 147BCAF71B209481008A3404 /* ExpandingCell.m */; };
+		14EEA9161B56596300EA0A9C /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14EEA9151B56596300EA0A9C /* Icon-60@2x.png */; };
+		14EEA9191B56657400EA0A9C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EEA9181B56657400EA0A9C /* RegisterViewController.m */; };
 		14F6A8011B4FF44100380D8A /* Keychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A8001B4FF44100380D8A /* Keychain.m */; };
 		C076639F1569220D6D66478F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7798A8D7DD2907B62E3270 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -99,6 +101,9 @@
 		147BCAF11B2092AA008A3404 /* ExpandingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandingCell.xib; sourceTree = "<group>"; };
 		147BCAF61B209481008A3404 /* ExpandingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandingCell.h; sourceTree = "<group>"; };
 		147BCAF71B209481008A3404 /* ExpandingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandingCell.m; sourceTree = "<group>"; };
+		14EEA9151B56596300EA0A9C /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "../../../../Downloads/icon/ios/AppIcon.appiconset/Icon-60@2x.png"; sourceTree = "<group>"; };
+		14EEA9171B56657400EA0A9C /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		14EEA9181B56657400EA0A9C /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		14F6A7FF1B4FF44100380D8A /* Keychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keychain.h; sourceTree = "<group>"; };
 		14F6A8001B4FF44100380D8A /* Keychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keychain.m; sourceTree = "<group>"; };
 		6D7798A8D7DD2907B62E3270 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +175,8 @@
 				147BCA191B1D7574008A3404 /* SecondViewController.m */,
 				141647BA1B53D4D000874FA5 /* ThirdViewController.h */,
 				141647BB1B53D4D000874FA5 /* ThirdViewController.m */,
+				14EEA9171B56657400EA0A9C /* RegisterViewController.h */,
+				14EEA9181B56657400EA0A9C /* RegisterViewController.m */,
 				147BCA1B1B1D7574008A3404 /* Main.storyboard */,
 				147BCA1E1B1D7574008A3404 /* Images.xcassets */,
 				147BCA201B1D7574008A3404 /* LaunchScreen.xib */,
@@ -210,6 +217,7 @@
 		147BCA371B1D78E7008A3404 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				14EEA9151B56596300EA0A9C /* Icon-60@2x.png */,
 				147BCA381B1D7906008A3404 /* Icon-72.png */,
 				147BCA391B1D7906008A3404 /* Icon-72@2x.png */,
 				147BCA3A1B1D7906008A3404 /* Icon-Small-20.png */,
@@ -370,6 +378,7 @@
 				147BCA1F1B1D7574008A3404 /* Images.xcassets in Resources */,
 				147BCA491B1D7907008A3404 /* Icon-Small-30@2x.png in Resources */,
 				147BCA4E1B1D7907008A3404 /* Icon.png in Resources */,
+				14EEA9161B56596300EA0A9C /* Icon-60@2x.png in Resources */,
 				147BCA4B1B1D7907008A3404 /* Icon-Small-50@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +441,7 @@
 				147BCA171B1D7574008A3404 /* FirstViewController.m in Sources */,
 				147BCA111B1D7574008A3404 /* main.m in Sources */,
 				14F6A8011B4FF44100380D8A /* Keychain.m in Sources */,
+				14EEA9191B56657400EA0A9C /* RegisterViewController.m in Sources */,
 				14772CF41B3E9367009B1D3A /* CBConstants.m in Sources */,
 				147BCADB1B1D9ABA008A3404 /* LoginViewController.m in Sources */,
 			);

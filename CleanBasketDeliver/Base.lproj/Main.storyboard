@@ -153,6 +153,15 @@
                                     <segue destination="49e-Tb-3d3" kind="show" identifier="loginToList" id="IgN-CO-ZTj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okp-f6-aOo">
+                                <rect key="frame" x="165" y="416" width="46" height="30"/>
+                                <state key="normal" title="가입">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="tDv-Ju-ORy" kind="show" id="H6X-YN-MUP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -181,6 +190,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lDs-7l-fYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-432" y="0.0"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="XRl-Zd-663">
+            <objects>
+                <viewController id="tDv-Ju-ORy" customClass="RegisterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YgH-Nr-EP1"/>
+                        <viewControllerLayoutGuide type="bottom" id="EvL-K2-IEa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ktx-MC-iCs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x9z-as-Foq">
+                                <rect key="frame" x="137" y="72" width="100" height="100"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2h-gj-omc">
+                                <rect key="frame" x="159" y="180" width="58" height="30"/>
+                                <state key="normal" title="직접 찍기">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="TakePhoto" destination="lTs-Yn-rTY" eventType="touchUpInside" id="IeA-hL-bZj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="435-Bk-qXb">
+                                <rect key="frame" x="157" y="218" width="60" height="30"/>
+                                <state key="normal" title="사진 선택">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChooseExisting" destination="lTs-Yn-rTY" eventType="touchUpInside" id="6wu-Ut-2pD"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PP3-hL-h1z">
+                                <rect key="frame" x="87" y="262" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kFa-wA-Thv">
+                                <rect key="frame" x="87" y="300" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8nL-dK-F39">
+                                <rect key="frame" x="87" y="338" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMf-6o-9hO">
+                                <rect key="frame" x="164" y="414" width="46" height="30"/>
+                                <state key="normal" title="가입">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tryRegister:" destination="tDv-Ju-ORy" eventType="touchUpInside" id="PP1-GE-R68"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="핸드폰 번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T03-32-iP8">
+                                <rect key="frame" x="87" y="376" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="PP3-hL-h1z" id="VyL-P8-DAa"/>
+                        <outlet property="imageView" destination="x9z-as-Foq" id="7Cd-5s-Z6o"/>
+                        <outlet property="nameLabel" destination="8nL-dK-F39" id="DXo-Sj-ldP"/>
+                        <outlet property="passwordLabel" destination="kFa-wA-Thv" id="h19-jc-9PB"/>
+                        <outlet property="phoneLabel" destination="T03-32-iP8" id="cko-IF-sOB"/>
+                        <outlet property="tryRegister" destination="AMf-6o-9hO" id="ulL-n6-fRW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTs-Yn-rTY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-432.5" y="781.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

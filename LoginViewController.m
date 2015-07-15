@@ -170,7 +170,10 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    return [self signIn];
+    if ([identifier isEqualToString:@"loginToList"])
+        return [self signIn];
+    else
+        return true;
 }
 
 - (void)showHudMessage:(NSString*)message {

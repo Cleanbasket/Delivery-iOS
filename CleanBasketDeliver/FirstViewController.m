@@ -171,7 +171,7 @@
     
     cell.datetimeLabel.text = datetime;
     cell.orderNumberLabel.text = [order order_number];
-    cell.addressLabel.text = [NSString stringWithFormat:@"%@ %@ %@ %@", address, addr_building, addr_number, addr_remainder];
+    cell.addressLabel.text = [NSString stringWithFormat:@"%@ %@ %@ %@", address, addr_number, addr_building, addr_remainder];
     cell.contactLabel.text = [order phone];
     cell.priceLabel.text = price;
     cell.itemLabel.text = [self getItemList:items];
