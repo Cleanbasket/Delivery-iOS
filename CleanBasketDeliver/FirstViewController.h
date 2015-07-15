@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Order.h"
+#import "ExpandingCell.h"
 
-@interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    int selectedIndex;
+@interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, FinishDelegate> {
+    NSInteger selectedIndex;
     NSMutableArray *titleArray;
     NSArray *subtitleArray;
     NSArray *textArray;

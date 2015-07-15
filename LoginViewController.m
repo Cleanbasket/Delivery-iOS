@@ -64,8 +64,15 @@
     
     Keychain *keychain = [[Keychain alloc]initWithService:@"CB" withGroup:nil];
     NSData *passwordAsValue = [[_passwordTextField text] dataUsingEncoding:NSUTF8StringEncoding];
-    if ([keychain insert :[_userIDTextField text] :passwordAsValue]) {
+    if ([keychain insert:[_userIDTextField text] :passwordAsValue]) {
         NSLog(@"data added to keychain: %@ %@", [_userIDTextField text], passwordAsValue);
+    }
+    else if ([keychain update:[_userIDTextField text] :passwordAsValue]) {
+        NSLog(@"failed to add. keychain data updated: %@ %@", [_userIDTextField text], passwordAsValue);
+    }
+    else {
+        NSLog(@"Failed update");
+        NSLog(@"%@", [keychain find:[_userIDTextField text]]);
     }
 }
 

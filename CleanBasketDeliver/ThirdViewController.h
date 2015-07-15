@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "order.h"
+#import "ExpandingCell.h"
 
-@interface ThirdViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    int selectedIndex;
+@interface ThirdViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, FinishDelegate> {
+    NSInteger selectedIndex;
     NSMutableArray *titleArray;
     NSArray *subtitleArray;
     NSArray *textArray;

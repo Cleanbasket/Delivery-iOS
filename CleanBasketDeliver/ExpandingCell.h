@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FinishDelegate <NSObject>
+
+- (void) finishOrder;
+
+@end
+
 @interface ExpandingCell : UITableViewCell
 
+@property (weak, nonatomic) id<FinishDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UILabel *typeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *datetimeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *orderNumberLabel;

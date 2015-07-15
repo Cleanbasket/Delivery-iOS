@@ -80,6 +80,7 @@
                     case CBServerConstantSuccess:
                     {
                         [self showFinishAlert];
+                        [self.delegate finishOrder];
                         break;
                     }
                     case CBServerConstantError:

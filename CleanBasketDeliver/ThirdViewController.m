@@ -145,6 +145,8 @@
     
     cell.clipsToBounds = YES;
     
+    cell.delegate = self;
+    
     return cell;
 }
 
@@ -178,7 +180,9 @@
     [buttonFinish addTarget:self action:@selector(buttonFinishPressed) forControlEvents:UIControlEventTouchDown];
 }
 
--(void)buttonFinishPressed {
+-(void)finishOrder {
+    selectedIndex = -1;
+    
     [self getData];
 }
 
