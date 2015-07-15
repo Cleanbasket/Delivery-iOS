@@ -176,8 +176,6 @@
     // User taps new row with none expanded
     selectedIndex = indexPath.row;
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    
-    [buttonFinish addTarget:self action:@selector(buttonFinishPressed) forControlEvents:UIControlEventTouchDown];
 }
 
 -(void)finishOrder {

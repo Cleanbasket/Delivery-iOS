@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7YK-zb-N0T">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--전체-->
@@ -120,43 +121,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Icon-72.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jgx-7U-ru9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-72.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jgx-7U-ru9">
                                 <rect key="frame" x="152" y="193" width="72" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="wNj-pk-dcY"/>
+                                </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74x-uA-oj6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74x-uA-oj6">
                                 <rect key="frame" x="112" y="302" width="150" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jz3-cz-L5f">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jz3-cz-L5f">
                                 <rect key="frame" x="113" y="340" width="150" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="크린바스켓 배달자" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6a-QM-DdN">
-                                <rect key="frame" x="126" y="273" width="123" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크린바스켓 배달자" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6a-QM-DdN">
+                                <rect key="frame" x="133" y="273" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liP-B6-whL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liP-B6-whL">
                                 <rect key="frame" x="168" y="378" width="39" height="30"/>
                                 <state key="normal" title="로그인">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="push" identifier="loginToList" id="IgN-CO-ZTj"/>
+                                    <segue destination="49e-Tb-3d3" kind="show" identifier="loginToList" id="IgN-CO-ZTj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="v6a-QM-DdN" secondAttribute="centerX" constant="-0.5" id="Eox-Wr-aHy"/>
-                            <constraint firstAttribute="centerX" secondItem="74x-uA-oj6" secondAttribute="centerX" id="Vo7-fC-JeU"/>
-                            <constraint firstAttribute="centerX" secondItem="liP-B6-whL" secondAttribute="centerX" constant="-0.5" id="X1w-We-JXq"/>
-                            <constraint firstAttribute="centerX" secondItem="Jz3-cz-L5f" secondAttribute="centerX" id="kWN-cX-STS"/>
-                            <constraint firstAttribute="centerX" secondItem="Jgx-7U-ru9" secondAttribute="centerX" id="syP-sw-K0B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jz3-cz-L5f" secondAttribute="trailing" constant="96" id="7D9-de-x1I"/>
+                            <constraint firstItem="Jgx-7U-ru9" firstAttribute="top" secondItem="pY9-Qy-5nu" secondAttribute="bottom" constant="129" id="8pB-Zl-Ggn"/>
+                            <constraint firstAttribute="centerX" secondItem="74x-uA-oj6" secondAttribute="centerX" constant="0.5" id="CaB-OG-J9F"/>
+                            <constraint firstItem="74x-uA-oj6" firstAttribute="top" secondItem="hYO-Pn-sFC" secondAttribute="top" constant="302" id="GVf-qX-fqI"/>
+                            <constraint firstItem="Jz3-cz-L5f" firstAttribute="leading" secondItem="hYO-Pn-sFC" secondAttribute="leadingMargin" constant="97" id="OHp-C0-42V"/>
+                            <constraint firstItem="Jz3-cz-L5f" firstAttribute="centerX" secondItem="Jgx-7U-ru9" secondAttribute="centerX" id="XNG-Nx-hgm"/>
+                            <constraint firstItem="v6a-QM-DdN" firstAttribute="top" secondItem="Jgx-7U-ru9" secondAttribute="bottom" constant="8" symbolic="YES" id="XNU-V4-IbX"/>
+                            <constraint firstItem="Jz3-cz-L5f" firstAttribute="top" secondItem="74x-uA-oj6" secondAttribute="bottom" constant="8" symbolic="YES" id="Xs2-gt-sK4"/>
+                            <constraint firstItem="74x-uA-oj6" firstAttribute="top" secondItem="v6a-QM-DdN" secondAttribute="bottom" constant="8" symbolic="YES" id="das-P0-X2Y"/>
+                            <constraint firstItem="74x-uA-oj6" firstAttribute="centerX" secondItem="v6a-QM-DdN" secondAttribute="centerX" id="oWa-C7-agv"/>
+                            <constraint firstItem="74x-uA-oj6" firstAttribute="leading" secondItem="hYO-Pn-sFC" secondAttribute="leadingMargin" constant="96" id="rTh-En-kl8"/>
+                            <constraint firstItem="liP-B6-whL" firstAttribute="top" secondItem="Jz3-cz-L5f" secondAttribute="bottom" constant="8" symbolic="YES" id="uOY-VS-a13"/>
+                            <constraint firstItem="74x-uA-oj6" firstAttribute="centerX" secondItem="liP-B6-whL" secondAttribute="centerX" id="ucG-4P-qce"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tc8-vs-BUI"/>
