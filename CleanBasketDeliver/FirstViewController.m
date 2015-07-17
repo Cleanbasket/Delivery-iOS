@@ -22,16 +22,6 @@
 @implementation FirstViewController
 @synthesize dataArray, dataRawArray,buttonFinish;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:@"FirstViewController" bundle:nil];
-    
-    if (self) {
-        self.title = NSLocalizedString(@"수거", @"수거");
-    }
-    
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     selectedIndex = -1;
     

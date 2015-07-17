@@ -11,6 +11,7 @@
 #import "Coupon.h"
 #import "Item.h"
 #import "PickupInfo.h"
+#import "DropoffInfo.h"
 
 @protocol Order
 @end
@@ -30,12 +31,14 @@
 @property NSString *order_number;
 @property NSString *phone;
 @property PickupInfo *pickupInfo;
+@property DropoffInfo *dropoffInfo;
 @property NSString *pickup_date;
 @property long pickup_man;
 @property long price;
 @property NSString *rdate;
 @property long state;
 @property NSDate *order_date;
+@property NSInteger *mileage;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

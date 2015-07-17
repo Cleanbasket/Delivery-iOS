@@ -38,6 +38,10 @@
 		147BCAEA1B1DE519008A3404 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 147BCAE91B1DE519008A3404 /* Address.plist */; };
 		147BCAF21B2092AA008A3404 /* ExpandingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147BCAF11B2092AA008A3404 /* ExpandingCell.xib */; };
 		147BCAF81B209481008A3404 /* ExpandingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 147BCAF71B209481008A3404 /* ExpandingCell.m */; };
+		14EB9BB51B5909B700E5B9C2 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB9BB31B5909B700E5B9C2 /* OrderCell.m */; };
+		14EB9BB61B5909B700E5B9C2 /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB9BB41B5909B700E5B9C2 /* OrderCell.xib */; };
+		14EB9BB91B592B8C00E5B9C2 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB9BB81B592B8C00E5B9C2 /* OrderViewController.m */; };
+		14EB9BBC1B594CD500E5B9C2 /* DropoffInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB9BBB1B594CD500E5B9C2 /* DropoffInfo.m */; };
 		14EEA9161B56596300EA0A9C /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14EEA9151B56596300EA0A9C /* Icon-60@2x.png */; };
 		14EEA9191B56657400EA0A9C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EEA9181B56657400EA0A9C /* RegisterViewController.m */; };
 		14F6A8011B4FF44100380D8A /* Keychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A8001B4FF44100380D8A /* Keychain.m */; };
@@ -101,6 +105,13 @@
 		147BCAF11B2092AA008A3404 /* ExpandingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandingCell.xib; sourceTree = "<group>"; };
 		147BCAF61B209481008A3404 /* ExpandingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandingCell.h; sourceTree = "<group>"; };
 		147BCAF71B209481008A3404 /* ExpandingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandingCell.m; sourceTree = "<group>"; };
+		14EB9BB21B5909B700E5B9C2 /* OrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
+		14EB9BB31B5909B700E5B9C2 /* OrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderCell.m; sourceTree = "<group>"; };
+		14EB9BB41B5909B700E5B9C2 /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
+		14EB9BB71B592B8C00E5B9C2 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		14EB9BB81B592B8C00E5B9C2 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		14EB9BBA1B594CD500E5B9C2 /* DropoffInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropoffInfo.h; sourceTree = "<group>"; };
+		14EB9BBB1B594CD500E5B9C2 /* DropoffInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropoffInfo.m; sourceTree = "<group>"; };
 		14EEA9151B56596300EA0A9C /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "../../../../Downloads/icon/ios/AppIcon.appiconset/Icon-60@2x.png"; sourceTree = "<group>"; };
 		14EEA9171B56657400EA0A9C /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		14EEA9181B56657400EA0A9C /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
@@ -162,6 +173,7 @@
 		147BCA0D1B1D7574008A3404 /* CleanBasketDeliver */ = {
 			isa = PBXGroup;
 			children = (
+				14EB9BAC1B5908F200E5B9C2 /* OrderCell */,
 				147BCAEE1B208F81008A3404 /* ExpandingCell */,
 				147BCADD1B1DD95D008A3404 /* Utils */,
 				147BCADC1B1DBE81008A3404 /* Models */,
@@ -175,6 +187,8 @@
 				147BCA191B1D7574008A3404 /* SecondViewController.m */,
 				141647BA1B53D4D000874FA5 /* ThirdViewController.h */,
 				141647BB1B53D4D000874FA5 /* ThirdViewController.m */,
+				14EB9BB71B592B8C00E5B9C2 /* OrderViewController.h */,
+				14EB9BB81B592B8C00E5B9C2 /* OrderViewController.m */,
 				14EEA9171B56657400EA0A9C /* RegisterViewController.h */,
 				14EEA9181B56657400EA0A9C /* RegisterViewController.m */,
 				147BCA1B1B1D7574008A3404 /* Main.storyboard */,
@@ -245,6 +259,8 @@
 				14772BBF1B3E9034009B1D3A /* Coupon.m */,
 				14772BC11B3E906C009B1D3A /* PickupInfo.h */,
 				14772BC21B3E906C009B1D3A /* PickupInfo.m */,
+				14EB9BBA1B594CD500E5B9C2 /* DropoffInfo.h */,
+				14EB9BBB1B594CD500E5B9C2 /* DropoffInfo.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -268,6 +284,16 @@
 				147BCAF11B2092AA008A3404 /* ExpandingCell.xib */,
 			);
 			name = ExpandingCell;
+			sourceTree = "<group>";
+		};
+		14EB9BAC1B5908F200E5B9C2 /* OrderCell */ = {
+			isa = PBXGroup;
+			children = (
+				14EB9BB21B5909B700E5B9C2 /* OrderCell.h */,
+				14EB9BB31B5909B700E5B9C2 /* OrderCell.m */,
+				14EB9BB41B5909B700E5B9C2 /* OrderCell.xib */,
+			);
+			name = OrderCell;
 			sourceTree = "<group>";
 		};
 		E4DD3A535F7A6B6BAA8D1092 /* Frameworks */ = {
@@ -324,7 +350,7 @@
 		147BCA031B1D7574008A3404 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "강한용";
 				TargetAttributes = {
 					147BCA0A1B1D7574008A3404 = {
@@ -371,6 +397,7 @@
 				147BCA451B1D7906008A3404 /* Icon-72@2x.png in Resources */,
 				147BCA4D1B1D7907008A3404 /* Icon-Small@2x.png in Resources */,
 				147BCA221B1D7574008A3404 /* LaunchScreen.xib in Resources */,
+				14EB9BB61B5909B700E5B9C2 /* OrderCell.xib in Resources */,
 				147BCA471B1D7907008A3404 /* Icon-Small-20@2x.png in Resources */,
 				147BCA4A1B1D7907008A3404 /* Icon-Small-50.png in Resources */,
 				147BCA4C1B1D7907008A3404 /* Icon-Small.png in Resources */,
@@ -437,9 +464,12 @@
 				14772BC01B3E9034009B1D3A /* Coupon.m in Sources */,
 				147BCA1A1B1D7574008A3404 /* SecondViewController.m in Sources */,
 				14772BBD1B3E8FE4009B1D3A /* Order.m in Sources */,
+				14EB9BBC1B594CD500E5B9C2 /* DropoffInfo.m in Sources */,
 				147BCA141B1D7574008A3404 /* AppDelegate.m in Sources */,
 				147BCA171B1D7574008A3404 /* FirstViewController.m in Sources */,
+				14EB9BB51B5909B700E5B9C2 /* OrderCell.m in Sources */,
 				147BCA111B1D7574008A3404 /* main.m in Sources */,
+				14EB9BB91B592B8C00E5B9C2 /* OrderViewController.m in Sources */,
 				14F6A8011B4FF44100380D8A /* Keychain.m in Sources */,
 				14EEA9191B56657400EA0A9C /* RegisterViewController.m in Sources */,
 				14772CF41B3E9367009B1D3A /* CBConstants.m in Sources */,
@@ -573,7 +603,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos8.4;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -589,7 +619,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos8.4;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

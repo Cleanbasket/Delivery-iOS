@@ -22,16 +22,6 @@
 @implementation SecondViewController
 @synthesize dataPickUpArray, buttonFinish;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:@"FirstViewController" bundle:nil];
-    
-    if (self) {
-        self.title = NSLocalizedString(@"수거", @"수거");
-    }
-    
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     selectedIndex = -1;
     
@@ -131,6 +121,8 @@
     NSString *addr_number = [order objectForKey:@"addr_number"];
     NSString *addr_remainder =[order objectForKey:@"addr_remainder"];
     
+    NSArray<Item> *items = [[dataPickUpArray objectAtIndex:indexPath.row] objectForKey:@"item"];
+
     NSRange needleRange = NSMakeRange(0, 16);
     NSString *datetime = [[order objectForKey:@"pickup_date"] substringWithRange:needleRange];
     
@@ -140,7 +132,8 @@
     cell.contactLabel.text = [order objectForKey:@"phone"];
     cell.priceLabel.text = price;
     cell.memoLabel.text = [order objectForKey:@"memo"];
-    
+    cell.itemLabel.text = [self getItemList:items];
+
     cell.tag = state;
     
     cell.clipsToBounds = YES;
@@ -148,6 +141,19 @@
     cell.delegate = self;
     
     return cell;
+}
+
+- (NSString *)getItemList:(NSArray<Item> *)items {
+    NSString *result = [NSString new];
+    
+    for (Item *item in items) {
+        NSString *itemName = [item valueForKey:@"name"];
+        NSString *itemQuantity = [NSString stringWithFormat:@"%@", [item valueForKey:@"count"]];
+        NSString *nameAndQuantity = [NSString stringWithFormat:@"%@(%@) ", itemName, itemQuantity];
+        result = [result stringByAppendingString:nameAndQuantity];
+    }
+    
+    return result;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
