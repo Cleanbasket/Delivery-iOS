@@ -18,6 +18,8 @@
 	<string>deliverer/join</string>
 	<key>DELIVERER_ORDER</key>
 	<string>deliverer/order</string>
+	<key>DELIVERER_LIST</key>
+	<string>deliverer/list</string>
 	<key>LOGIN_CHECK</key>
 	<string>auth/check</string>
 	<key>CONFIRM_PICKUP</key>

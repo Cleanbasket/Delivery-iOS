@@ -123,6 +123,7 @@
         cell.priceLabel.textColor = [UIColor whiteColor];
         cell.itemLabel.textColor = [UIColor whiteColor];
         cell.memoLabel.textColor = [UIColor whiteColor];
+        cell.noteLabel.textColor = [UIColor whiteColor];
     }
     else {
         if (state == 2 || state == 4)
@@ -137,6 +138,7 @@
         cell.priceLabel.textColor = [UIColor blackColor];
         cell.itemLabel.textColor = [UIColor blackColor];
         cell.memoLabel.textColor = [UIColor blackColor];
+        cell.noteLabel.textColor = [UIColor blackColor];
     }
     
     if (state < 3)
@@ -166,6 +168,7 @@
     cell.priceLabel.text = price;
     cell.itemLabel.text = [self getItemList:items];
     cell.memoLabel.text = [order memo];
+    cell.noteLabel.text = [order note];
     
     cell.tag = state;
     

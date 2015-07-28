@@ -27,6 +27,7 @@
 @property long dropoff_man;
 @property long dropoff_price;
 @property NSArray<Item> *item;
+@property NSString *note;
 @property NSString *memo;
 @property NSString *order_number;
 @property NSString *phone;

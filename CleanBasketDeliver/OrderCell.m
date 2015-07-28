@@ -9,7 +9,7 @@
 #import "OrderCell.h"
 
 @implementation OrderCell
-@synthesize pickUpLabel, dropOffLabel, orderNumberLabel, addressLabel, contactLabel, priceLabel, itemLabel, memoLabel, couponLabel, mileageLabel;
+@synthesize pickUpLabel, dropOffLabel, orderNumberLabel, addressLabel, contactLabel, priceLabel, itemLabel, memoLabel, couponLabel, mileageLabel, noteLabel;
 
 - (void)awakeFromNib {
     // Initialization code

@@ -98,6 +98,7 @@
         cell.couponLabel.textColor = [UIColor whiteColor];
         cell.mileageLabel.textColor = [UIColor whiteColor];
         cell.stateLabel.textColor = [UIColor whiteColor];
+        cell.noteLabel.textColor = [UIColor whiteColor];
     }
     else {
         if (state == 1 || state == 3)
@@ -117,6 +118,7 @@
         cell.couponLabel.textColor = [UIColor blackColor];
         cell.mileageLabel.textColor = [UIColor blackColor];
         cell.stateLabel.textColor = [UIColor blackColor];
+        cell.noteLabel.textColor = [UIColor blackColor];
     }
     
     NSString *price = [NSString stringWithFormat:@"%@", [order objectForKey:@"price"]];
@@ -144,7 +146,8 @@
     cell.couponLabel.text = [self getCouponList:coupons];
     cell.mileageLabel.text = [NSString stringWithFormat:@"%@", [order objectForKey:@"mileage"]];
     cell.stateLabel.text = [self getState:order];
-    
+    cell.noteLabel.text = [order objectForKey:@"note"];
+
     cell.clipsToBounds = YES;
     
     cell.delegate = self;
@@ -218,7 +221,7 @@
             case CBServerConstantSuccess: {
                 [self showFinishAlert];
                 
-                [_tableView reloadData];
+                [self getData];
                 break;
             }
             case CBServerConstantError: {

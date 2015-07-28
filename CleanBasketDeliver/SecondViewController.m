@@ -7,7 +7,7 @@
 //
 
 #import "SecondViewController.h"
-#import "ExpandingCell.h"
+#import "AssignCell.h"
 #import "AFNetworking.h"
 #import "order.h"
 
@@ -73,11 +73,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"expandingCell";
-    ExpandingCell *cell = (ExpandingCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    static NSString *cellIdentifier = @"assignCell";
+    AssignCell *cell = (AssignCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ExpandingCell" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"AssignCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     
@@ -95,9 +95,10 @@
         cell.priceLabel.textColor = [UIColor whiteColor];
         cell.itemLabel.textColor = [UIColor whiteColor];
         cell.memoLabel.textColor = [UIColor whiteColor];
+        cell.noteLabel.textColor = [UIColor whiteColor];
     }
     else {
-        if (state == 3)
+        if (state == 1 || state == 3)
             cell.contentView.backgroundColor = [UIColor lightGrayColor];
         else
             cell.contentView.backgroundColor = [UIColor whiteColor];
@@ -109,13 +110,14 @@
         cell.priceLabel.textColor = [UIColor blackColor];
         cell.itemLabel.textColor = [UIColor blackColor];
         cell.memoLabel.textColor = [UIColor blackColor];
+        cell.noteLabel.textColor = [UIColor blackColor];
     }
     
     PickupInfo *pickupInfo = [order objectForKey:@"pickupInfo"];
     
-    if (state == 2)
-        cell.typeLabel.text = @"배정";
-    else if (state == 3)
+    if (state == 0)
+        cell.typeLabel.text = @"미배정";
+    else if (state == 1)
         cell.typeLabel.text = [pickupInfo valueForKey:@"name"];
     
     NSString *price = [NSString stringWithFormat:@"%@", [order objectForKey:@"price"]];
@@ -137,7 +139,8 @@
     cell.priceLabel.text = price;
     cell.memoLabel.text = [order objectForKey:@"memo"];
     cell.itemLabel.text = [self getItemList:items];
-    
+    cell.noteLabel.text = [order objectForKey:@"note"];
+
     cell.tag = state;
     
     cell.clipsToBounds = YES;

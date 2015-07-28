@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "order.h"
-#import "ExpandingCell.h"
+#import "AssignCell.h"
 
-@interface ThirdViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, FinishDelegate> {
+@interface ThirdViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, FinishAssignDelegate> {
     NSInteger selectedIndex;
 }
 

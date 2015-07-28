@@ -23,6 +23,7 @@
         self.dropoff_man = [dictionary[@"dropoff_man"] longValue];
         self.dropoff_price = [dictionary[@"dropoff_price"] longValue];
         self.item = dictionary[@"item"];
+        self.note = dictionary[@"note"];
         self.memo = dictionary[@"memo"];
         self.order_number = dictionary[@"order_number"];
         self.phone = dictionary[@"phone"];

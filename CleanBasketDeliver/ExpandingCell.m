@@ -17,7 +17,7 @@
 @end
 
 @implementation ExpandingCell
-@synthesize typeLabel, datetimeLabel, orderNumberLabel, addressLabel, contactLabel, priceLabel, itemLabel, memoLabel;
+@synthesize typeLabel, datetimeLabel, orderNumberLabel, addressLabel, contactLabel, priceLabel, itemLabel, memoLabel, noteLabel;
 
 - (IBAction)buttonFinish:(id)sender {
     [self showConfirmationAlert];
@@ -55,7 +55,7 @@
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSArray* array = [[orderNumberLabel text] componentsSeparatedByString: @"-"];
-    NSString *oid = [array objectAtIndex: 1];
+    NSString *oid = [array objectAtIndex:1];
 
     if (buttonIndex == 1) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
