@@ -12,13 +12,10 @@
 
 @interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, FinishDelegate> {
     NSInteger selectedIndex;
-    NSMutableArray *titleArray;
-    NSArray *subtitleArray;
-    NSArray *textArray;
 }
 
 @property NSMutableArray<Order> *dataRawArray;
-@property NSMutableArray<Order> *dataArray;
+@property NSMutableArray *dataArray;
 @property (strong, nonatomic) UIButton *buttonFinish;
 
 @end

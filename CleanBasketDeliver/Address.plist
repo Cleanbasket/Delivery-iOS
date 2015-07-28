@@ -8,6 +8,8 @@
 	<string>auth</string>
 	<key>REGID</key>
 	<string>regid</string>
+	<key>ITEM</key>
+	<string>item/code</string>
 	<key>DELIVERER_PICKUP</key>
 	<string>deliverer/pickup</string>
 	<key>DELIVERER_DROPOFF</key>
@@ -22,6 +24,20 @@
 	<string>deliverer/pickup/complete</string>
 	<key>CONFIRM_DROPOFF</key>
 	<string>deliverer/dropoff/complete</string>
+	<key>ASSIGN_PICKUP</key>
+	<string>deliverer/pickup/assign</string>
+	<key>ASSIGN_DROPOFF</key>
+	<string>deliverer/dropoff/assign</string>
+	<key>ASSIGN_CANCEL</key>
+	<string>deliverer/assign/cancel</string>
+	<key>ORDER_PICKUP</key>
+	<string>deliverer/order/pickup</string>
+	<key>ORDER_DROPOFF</key>
+	<string>deliverer/order/dropoff</string>
+	<key>ORDER_MODIFY_TIME</key>
+	<string>deliverer/order/date</string>
+	<key>ORDER_MODIFY_TOTAL</key>
+	<string>deliverer/order/total</string>
 	<key>LOGOUT</key>
 	<string>logout</string>
 </dict>

@@ -21,4 +21,29 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)callPhone:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [contactLabel text]]]];
+}
+
+- (IBAction)modifyOrder:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"주문수정" delegate:self cancelButtonTitle:@"취소" destructiveButtonTitle:nil otherButtonTitles:@"수거/배달시간",  @"품목", @"가격", @"배정 취소", nil];
+    
+    [actionSheet showInView:self];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [self.delegate performSegue:self index:buttonIndex];
+    }
+    else if (buttonIndex == 1) {
+        [self.delegate performSegue:self index:buttonIndex];
+    }
+    else if (buttonIndex == 2) {
+        [self.delegate performSegue:self index:buttonIndex];
+    }
+    else if (buttonIndex == 3) {
+        [self.delegate performSegue:self index:buttonIndex];
+    }
+}
+
 @end

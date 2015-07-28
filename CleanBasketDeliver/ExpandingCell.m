@@ -29,9 +29,11 @@
                                                   delegate:self
                                          cancelButtonTitle:@"No"
                                          otherButtonTitles:@"Yes", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField *alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.placeholder = @"특이사항이 있으면 남겨주세요";
     [alert show];
 }
-
 
 - (void) showFinishAlert {
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Success"
@@ -57,7 +59,7 @@
 
     if (buttonIndex == 1) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-            NSDictionary *parameters = @{@"oid":oid, @"note":@""};
+            NSDictionary *parameters = @{@"oid":oid, @"note":[[alertView textFieldAtIndex:0] text]};
             
             NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
             NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
@@ -99,7 +101,6 @@
 
 - (IBAction)callPhone:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [contactLabel text]]]];
-    NSLog(@"Phone Call");
 }
 
 @end

@@ -52,13 +52,8 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="시간" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flm-8B-gTt">
-                        <rect key="frame" x="54" y="12" width="150" height="21"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="수거" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74N-7g-X3A">
-                        <rect key="frame" x="8" y="12" width="38" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="홍길동" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74N-7g-X3A">
+                        <rect key="frame" x="8" y="12" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -77,6 +72,11 @@
                         <rect key="frame" x="267" y="12" width="100" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="시간" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flm-8B-gTt">
+                        <rect key="frame" x="58" y="12" width="150" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>

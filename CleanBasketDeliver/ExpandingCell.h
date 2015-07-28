@@ -10,7 +10,7 @@
 
 @protocol FinishDelegate <NSObject>
 
-- (void) finishOrder;
+- (void)finishOrder;
 
 @end
 

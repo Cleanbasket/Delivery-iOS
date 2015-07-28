@@ -12,9 +12,6 @@
 
 @interface SecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, FinishDelegate> {
     NSInteger selectedIndex;
-    NSMutableArray *titleArray;
-    NSArray *subtitleArray;
-    NSArray *textArray;
 }
 
 @property NSArray<Order> *dataPickUpArray;

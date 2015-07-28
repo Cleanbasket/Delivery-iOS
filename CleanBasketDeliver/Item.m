@@ -10,4 +10,18 @@
 
 @implementation Item
 
+-(id)initWithTitle:(NSInteger)itid name:(NSString *)name price:(NSInteger)price count:(NSInteger)count {
+    self = [super init];
+    if (self) {
+        _itid = itid;
+        _name = name;
+        _price = price;
+        _count = count;
+        
+        return self;
+    }
+    
+    return nil;
+}
+
 @end

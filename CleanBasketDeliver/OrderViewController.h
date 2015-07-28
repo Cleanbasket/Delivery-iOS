@@ -10,7 +10,7 @@
 #import "order.h"
 #import "OrderCell.h"
 
-@interface OrderViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface OrderViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SegueDelegate> {
     NSInteger selectedIndex;
 }
 

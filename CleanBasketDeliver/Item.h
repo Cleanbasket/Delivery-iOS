@@ -12,14 +12,16 @@
 @end
 
 @interface Item : NSObject
-@property int itid;
+@property NSInteger itid;
 @property int oid;
 @property int item_code;
 @property NSString *name;
 @property NSString *descr;
-@property int price;
-@property int count;
+@property NSInteger price;
+@property NSInteger count;
 @property NSString *img;
 @property NSString *rdate;
+
+-(id)initWithTitle:(NSInteger)itid name:(NSString *)name price:(NSInteger)price count:(NSInteger)count;
 
 @end

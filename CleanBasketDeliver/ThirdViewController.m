@@ -32,11 +32,13 @@
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
     NSString* root = [dict objectForKey:@"ROOT"];
-    NSString* address = [dict objectForKey:@"DELIVERER_DROPOFF"];
+    NSString* address = [dict objectForKey:@"ORDER_DROPOFF"];
     
     afManager = [AFHTTPRequestOperationManager manager];
     afManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [afManager setRequestSerializer:[AFHTTPRequestSerializer new]];
+    afManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [afManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [afManager POST:[NSString stringWithFormat:@"%@%@", root, address] parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         dataDropOffArray = [NSJSONSerialization JSONObjectWithData: [responseObject[@"data"] dataUsingEncoding:NSUTF8StringEncoding]
                                                           options: NSJSONReadingMutableContainers
@@ -95,7 +97,7 @@
         cell.memoLabel.textColor = [UIColor whiteColor];
     }
     else {
-        if (state == 2 || state == 4)
+        if (state == 3)
             cell.contentView.backgroundColor = [UIColor lightGrayColor];
         else
             cell.contentView.backgroundColor = [UIColor whiteColor];
@@ -109,10 +111,12 @@
         cell.memoLabel.textColor = [UIColor blackColor];
     }
     
-    if (state < 3)
-        cell.typeLabel.text = @"수거";
-    else
-        cell.typeLabel.text = @"배달";
+    DropoffInfo *dropoffInfo = [order objectForKey:@"dropoffInfo"];
+    
+    if (state == 2)
+        cell.typeLabel.text = @"배정";
+    else if (state == 3)
+        cell.typeLabel.text = [dropoffInfo valueForKey:@"name"];
     
     NSString *price = [NSString stringWithFormat:@"%@", [order objectForKey:@"price"]];
     
@@ -133,7 +137,7 @@
     cell.priceLabel.text = price;
     cell.memoLabel.text = [order objectForKey:@"memo"];
     cell.itemLabel.text = [self getItemList:items];
-
+    
     cell.tag = state;
     
     cell.clipsToBounds = YES;
@@ -160,7 +164,7 @@
     if (selectedIndex == indexPath.row) {
         return 190;
     } else {
-        return 44;
+        return 60;
     }
 }
 

@@ -98,7 +98,7 @@
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
         NSString* root = [dict objectForKey:@"ROOT"];
         NSString* address = [dict objectForKey:@"DELIVERER_JOIN"];
-        
+
         afManager = [AFHTTPRequestOperationManager manager];
         [afManager setRequestSerializer:[AFHTTPRequestSerializer new]];
         afManager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -109,24 +109,24 @@
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSNumber *value = responseObject[@"constant"];
             switch ([value integerValue]) {
-                case CBServerConstantSuccess:
-                {
+                case CBServerConstantSuccess: {
                     [self showFinishAlert];
                     [self.navigationController popViewControllerAnimated:YES];
                     break;
                 }
-                case CBServerConstantError:
-                {
+                case CBServerConstantError: {
                     [self showErrorAlert];
                     break;
                 }
-                case CBServerConstantsDuplication:
-                {
+                case CBServerConstantsDuplication: {
                     [self showDuplicationAlert];
                     break;
                 }
-                case CBServerConstantsImageWriteError:
-                {
+                case CBServerConstantsImageWriteError: {
+                    [self showErrorAlert];
+                    break;
+                }
+                default: {
                     [self showErrorAlert];
                     break;
                 }
@@ -136,9 +136,7 @@
             NSLog(@"%@", [error description]);
         }];
     });
-
 }
-
 
 - (BOOL)checkEmpty {
     if ([_imageView image] == nil)

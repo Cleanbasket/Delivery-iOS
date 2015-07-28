@@ -69,9 +69,12 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZc-V5-t79">
                         <rect key="frame" x="164" y="169" width="46" height="30"/>
-                        <state key="normal" title="배정">
+                        <state key="normal" title="수정">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="modifyOrder:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hZb-rE-KFv"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="배정완료(홍길동)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kf-gY-HJq">
                         <rect key="frame" x="287" y="37" width="80" height="21"/>
@@ -85,6 +88,15 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkl-N1-pFo">
+                        <rect key="frame" x="164" y="61" width="46" height="30"/>
+                        <state key="normal" title="연결">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="callPhone:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ukZ-GG-YJm"/>
+                        </connections>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>

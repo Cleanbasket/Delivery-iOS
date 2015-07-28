@@ -7,6 +7,7 @@
 //
 
 #import "OrderViewController.h"
+#import "ModifyDateTimeViewController.h"
 #import "OrderCell.h"
 #import "AFNetworking.h"
 #import "order.h"
@@ -143,10 +144,11 @@
     cell.couponLabel.text = [self getCouponList:coupons];
     cell.mileageLabel.text = [NSString stringWithFormat:@"%@", [order objectForKey:@"mileage"]];
     cell.stateLabel.text = [self getState:order];
-    cell.tag = state;
     
     cell.clipsToBounds = YES;
-        
+    
+    cell.delegate = self;
+    
     return cell;
 }
 
@@ -180,6 +182,134 @@
     }
     
     return [NSString stringWithFormat:@"%@(%@)", result, name];
+}
+
+- (void)modifyTotal {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Question"
+                                                   message:@"가격 변경"
+                                                  delegate:self
+                                         cancelButtonTitle:@"No"
+                                         otherButtonTitles:@"Yes", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField *alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.keyboardType = UIKeyboardTypeNumberPad;
+    alertTextField.placeholder = @"변경된 가격을 정확히 입력";
+    
+    [alert show];
+}
+
+- (void)cancelAssign {
+    NSMutableDictionary *order = [dataArray objectAtIndex:selectedIndex];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    NSString* root = [dict objectForKey:@"ROOT"];
+    NSString* address = [dict objectForKey:@"ASSIGN_CANCEL"];
+    
+    afManager = [AFHTTPRequestOperationManager manager];
+    [afManager setRequestSerializer:[AFHTTPRequestSerializer new]];
+    afManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [afManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    afManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [afManager POST:[NSString stringWithFormat:@"%@%@", root, address] parameters:order success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSNumber *value = responseObject[@"constant"];
+        switch ([value integerValue]) {
+            case CBServerConstantSuccess: {
+                [self showFinishAlert];
+                
+                [_tableView reloadData];
+                break;
+            }
+            case CBServerConstantError: {
+                [self showErrorAlert];
+                break;
+            }
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self showErrorAlert];
+        NSLog(@"%@", [error description]);
+    }];
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        NSInteger price = [[[alertView textFieldAtIndex:0] text] integerValue];
+        
+        NSMutableDictionary *order = [dataArray objectAtIndex:selectedIndex];
+        [order removeObjectForKey:@"price"];
+        [order setObject:[NSNumber numberWithLong:price] forKey:@"price"];
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+        NSString* root = [dict objectForKey:@"ROOT"];
+        NSString* address = [dict objectForKey:@"ORDER_MODIFY_TOTAL"];
+        
+        afManager = [AFHTTPRequestOperationManager manager];
+        [afManager setRequestSerializer:[AFHTTPRequestSerializer new]];
+        afManager.requestSerializer = [AFJSONRequestSerializer serializer];
+        [afManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        
+        afManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+        [afManager POST:[NSString stringWithFormat:@"%@%@", root, address] parameters:order success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSNumber *value = responseObject[@"constant"];
+            switch ([value integerValue]) {
+                case CBServerConstantSuccess: {
+                    [self showFinishAlert];
+                    
+                    [_tableView reloadData];
+                    break;
+                }
+                case CBServerConstantError: {
+                    [self showErrorAlert];
+                    break;
+                }
+            }
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [self showErrorAlert];
+            NSLog(@"%@", [error description]);
+        }];
+    }
+}
+
+- (void) showFinishAlert {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Success"
+                                                   message:@"처리 성공"
+                                                  delegate:self
+                                         cancelButtonTitle:nil
+                                         otherButtonTitles:@"Yes", nil];
+    [alert show];
+}
+
+- (void) showErrorAlert {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"실패"
+                                                   message:@"처리 실패"
+                                                  delegate:self
+                                         cancelButtonTitle:nil
+                                         otherButtonTitles:@"Yes", nil];
+    [alert show];
+}
+
+- (void)performSegue:(id)sender index:(NSInteger)index {
+    switch (index) {
+        case 0:
+            [self performSegueWithIdentifier:@"modifyDateTime" sender:sender];
+            break;
+        case 1:
+            [self performSegueWithIdentifier:@"modifyItem" sender:sender];
+            break;
+        case 2:
+            [self modifyTotal];
+            break;
+        case 3:
+            [self cancelAssign];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier]isEqualToString:@"modifyDateTime"]) {
+        [segue.destinationViewController setOrder:[dataArray objectAtIndex:selectedIndex]];
+    }
 }
 
 - (NSString *)getCouponList:(NSArray<Coupon> *)coupons {
@@ -255,7 +385,6 @@
                                                     options: NSJSONReadingMutableContainers
                                                       error: nil]];
         [self.tableView reloadData];
-        NSLog(@"Second Success");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
     }];
