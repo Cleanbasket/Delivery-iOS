@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol SegueDelegate <NSObject>
-
 - (void)performSegue:(id)sender index:(NSInteger)index;
-
 @end
 
 @interface OrderCell : UITableViewCell <UIActionSheetDelegate>

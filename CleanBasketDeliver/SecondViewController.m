@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "ModifyDateTimeViewController.h"
 #import "AssignCell.h"
 #import "AFNetworking.h"
 #import "order.h"
@@ -96,6 +97,9 @@
         cell.itemLabel.textColor = [UIColor whiteColor];
         cell.memoLabel.textColor = [UIColor whiteColor];
         cell.noteLabel.textColor = [UIColor whiteColor];
+        cell.couponLabel.textColor = [UIColor whiteColor];
+        cell.mileageLabel.textColor = [UIColor whiteColor];
+        cell.dropOffDateLabel.textColor = [UIColor whiteColor];
     }
     else {
         if (state == 1 || state == 3)
@@ -111,6 +115,9 @@
         cell.itemLabel.textColor = [UIColor blackColor];
         cell.memoLabel.textColor = [UIColor blackColor];
         cell.noteLabel.textColor = [UIColor blackColor];
+        cell.couponLabel.textColor = [UIColor blackColor];
+        cell.mileageLabel.textColor = [UIColor blackColor];
+        cell.dropOffDateLabel.textColor = [UIColor blackColor];
     }
     
     PickupInfo *pickupInfo = [order objectForKey:@"pickupInfo"];
@@ -120,7 +127,12 @@
     else if (state == 1)
         cell.typeLabel.text = [pickupInfo valueForKey:@"name"];
     
-    NSString *price = [NSString stringWithFormat:@"%@", [order objectForKey:@"price"]];
+    NSString *price;
+    if ([[order objectForKey:@"payment_method"] integerValue] == 3) {
+        price = [NSString stringWithFormat:@"인앱 %@", [order objectForKey:@"price"]];
+    } else {
+        price = [NSString stringWithFormat:@"%@", [order objectForKey:@"price"]];
+    }
     
     NSString *address = [order objectForKey:@"address"];
     NSString *addr_building = [order objectForKey:@"addr_building"];
@@ -131,7 +143,8 @@
 
     NSRange needleRange = NSMakeRange(0, 16);
     NSString *datetime = [[order objectForKey:@"pickup_date"] substringWithRange:needleRange];
-    
+    NSArray<Coupon> *coupons = [[dataPickUpArray objectAtIndex:indexPath.row] objectForKey:@"coupon"];
+
     cell.datetimeLabel.text = datetime;
     cell.orderNumberLabel.text = [order objectForKey:@"order_number"];
     cell.addressLabel.text = [NSString stringWithFormat:@"%@ %@ %@ %@", address, addr_building, addr_number, addr_remainder];
@@ -140,7 +153,10 @@
     cell.memoLabel.text = [order objectForKey:@"memo"];
     cell.itemLabel.text = [self getItemList:items];
     cell.noteLabel.text = [order objectForKey:@"note"];
-
+    cell.couponLabel.text = [self getCouponList:coupons];
+    cell.mileageLabel.text = [NSString stringWithFormat:@"마일리지 %@", [order objectForKey:@"mileage"]];
+    cell.dropOffDateLabel.text = [[order objectForKey:@"dropoff_date"] substringWithRange:needleRange];
+    
     cell.tag = state;
     
     cell.clipsToBounds = YES;
@@ -165,7 +181,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (selectedIndex == indexPath.row) {
-        return 190;
+        return 220;
     } else {
         return 60;
     }
@@ -195,6 +211,147 @@
     selectedIndex = -1;
     
     [self getData];
+}
+
+- (void)performSegue:(id)sender index:(NSInteger)index {
+    switch (index) {
+        case 0:
+            [self performSegueWithIdentifier:@"modifyDateTimeA" sender:sender];
+            break;
+        case 1:
+            [self performSegueWithIdentifier:@"modifyItemA" sender:sender];
+            break;
+        case 2:
+            [self modifyTotal];
+            break;
+        case 3:
+            [self cancelAssign];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier]isEqualToString:@"modifyDateTimeA"]) {
+        [segue.destinationViewController setOrder:[dataPickUpArray objectAtIndex:selectedIndex]];
+    }
+}
+
+- (void)modifyTotal {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Question"
+                                                   message:@"가격 변경"
+                                                  delegate:self
+                                         cancelButtonTitle:@"No"
+                                         otherButtonTitles:@"Yes", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField *alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.keyboardType = UIKeyboardTypeNumberPad;
+    alertTextField.placeholder = @"변경된 가격을 정확히 입력";
+    
+    [alert show];
+}
+
+- (void)cancelAssign {
+    NSMutableDictionary *order = [dataPickUpArray objectAtIndex:selectedIndex];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    NSString* root = [dict objectForKey:@"ROOT"];
+    NSString* address = [dict objectForKey:@"ASSIGN_CANCEL"];
+    
+    afManager = [AFHTTPRequestOperationManager manager];
+    [afManager setRequestSerializer:[AFHTTPRequestSerializer new]];
+    afManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [afManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    afManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [afManager POST:[NSString stringWithFormat:@"%@%@", root, address] parameters:order success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSNumber *value = responseObject[@"constant"];
+        switch ([value integerValue]) {
+            case CBServerConstantSuccess: {
+                [self showFinishAlert];
+                
+                [self getData];
+                break;
+            }
+            case CBServerConstantError: {
+                [self showErrorAlert];
+                break;
+            }
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self showErrorAlert];
+        NSLog(@"%@", [error description]);
+    }];
+}
+
+- (void) showFinishAlert {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Success"
+                                                   message:@"처리 성공"
+                                                  delegate:self
+                                         cancelButtonTitle:nil
+                                         otherButtonTitles:@"Yes", nil];
+    [alert show];
+}
+
+- (void) showErrorAlert {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"실패"
+                                                   message:@"처리 실패"
+                                                  delegate:self
+                                         cancelButtonTitle:nil
+                                         otherButtonTitles:@"Yes", nil];
+    [alert show];
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        NSInteger price = [[[alertView textFieldAtIndex:0] text] integerValue];
+        
+        NSMutableDictionary *order = [dataPickUpArray objectAtIndex:selectedIndex];
+        [order removeObjectForKey:@"price"];
+        [order setObject:[NSNumber numberWithLong:price] forKey:@"price"];
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+        NSString* root = [dict objectForKey:@"ROOT"];
+        NSString* address = [dict objectForKey:@"ORDER_MODIFY_TOTAL"];
+        
+        afManager = [AFHTTPRequestOperationManager manager];
+        [afManager setRequestSerializer:[AFHTTPRequestSerializer new]];
+        afManager.requestSerializer = [AFJSONRequestSerializer serializer];
+        [afManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        
+        afManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+        [afManager POST:[NSString stringWithFormat:@"%@%@", root, address] parameters:order success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSNumber *value = responseObject[@"constant"];
+            switch ([value integerValue]) {
+                case CBServerConstantSuccess: {
+                    [self showFinishAlert];
+                    
+                    [_tableView reloadData];
+                    break;
+                }
+                case CBServerConstantError: {
+                    [self showErrorAlert];
+                    break;
+                }
+            }
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [self showErrorAlert];
+            NSLog(@"%@", [error description]);
+        }];
+    }
+}
+
+- (NSString *)getCouponList:(NSArray<Coupon> *)coupons {
+    NSString *result = [NSString new];
+    
+    for (Item *item in coupons) {
+        NSString *couponName = [item valueForKey:@"name"];
+        NSString *value = [NSString stringWithFormat:@"%@", [item valueForKey:@"value"]];
+        NSString *nameAndQuantity = [NSString stringWithFormat:@"%@(%@) ", couponName, value];
+        result = [result stringByAppendingString:nameAndQuantity];
+    }
+    
+    return result;
 }
 
 @end

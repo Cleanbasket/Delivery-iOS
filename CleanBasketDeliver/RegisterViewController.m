@@ -30,6 +30,7 @@
     picker2 = [[UIImagePickerController alloc] init];
     picker2.delegate = self;
     [picker2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    
     [self presentViewController:picker2 animated:YES completion:NULL];
 }
 
@@ -80,6 +81,16 @@
     [alert show];
 }
 
+
+- (void) showImageErrorAlert {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"에러"
+                                                   message:@"이메일 업로드 실패"
+                                                  delegate:self
+                                         cancelButtonTitle:nil
+                                         otherButtonTitles:@"Yes", nil];
+    [alert show];
+}
+
 - (IBAction)tryRegister:(id)sender {
     if ([self checkEmpty]) {
         [self register];
@@ -91,7 +102,7 @@
 
 - (void)register {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.5);
+        NSData *imageData = UIImageJPEGRepresentation(_imageView.image, 0.5);
 
         NSDictionary *parameters = @{@"email":[_emailLabel text], @"password":[_passwordLabel text], @"name":[_nameLabel text], @"phone":[_phoneLabel text], @"birthday":@""};
         NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
@@ -105,7 +116,7 @@
         [afManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         afManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
         [afManager POST:[NSString stringWithFormat:@"%@%@", root, address] parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-            [formData appendPartWithFileData:imageData name:@"file" fileName:@"file" mimeType:@"image/jpeg"];
+            [formData appendPartWithFileData:imageData name:@"file" fileName:@"file.jpg" mimeType:@"image/jpeg"];
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSNumber *value = responseObject[@"constant"];
             switch ([value integerValue]) {

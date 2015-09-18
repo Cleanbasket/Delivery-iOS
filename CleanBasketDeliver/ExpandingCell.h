@@ -27,6 +27,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *memoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *noteLabel;
 @property (weak, nonatomic) IBOutlet UIButton *callPhone;
+@property (weak, nonatomic) IBOutlet UILabel *couponLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mileageLabel;
 @property (weak, nonatomic) IBOutlet UIButton *buttonFinish;
 
 @end

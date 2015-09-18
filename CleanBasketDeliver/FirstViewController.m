@@ -124,6 +124,8 @@
         cell.itemLabel.textColor = [UIColor whiteColor];
         cell.memoLabel.textColor = [UIColor whiteColor];
         cell.noteLabel.textColor = [UIColor whiteColor];
+        cell.couponLabel.textColor = [UIColor whiteColor];
+        cell.mileageLabel.textColor = [UIColor whiteColor];
     }
     else {
         if (state == 2 || state == 4)
@@ -139,6 +141,8 @@
         cell.itemLabel.textColor = [UIColor blackColor];
         cell.memoLabel.textColor = [UIColor blackColor];
         cell.noteLabel.textColor = [UIColor blackColor];
+        cell.couponLabel.textColor = [UIColor blackColor];
+        cell.mileageLabel.textColor = [UIColor blackColor];
     }
     
     if (state < 3)
@@ -146,7 +150,12 @@
     else
         cell.typeLabel.text = @"배달";
     
-    NSString *price = [NSString stringWithFormat:@"%d", (int) [order price]];
+    NSString *price;
+    if ([order payment_method] == 3) {
+        price = [NSString stringWithFormat:@"인앱 %d", (int) [order price]];
+    } else {
+        price = [NSString stringWithFormat:@"%d", (int) [order price]];
+    }
     
     NSString *address = [order address];
     NSString *addr_building = [order addr_building];
@@ -169,7 +178,8 @@
     cell.itemLabel.text = [self getItemList:items];
     cell.memoLabel.text = [order memo];
     cell.noteLabel.text = [order note];
-    
+    cell.couponLabel.text = [self getCouponList:[order coupon]];
+    cell.mileageLabel.text = [NSString stringWithFormat:@"마일리지 %d", (int) [order mileage]];
     cell.tag = state;
     
     cell.clipsToBounds = YES;
@@ -194,7 +204,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (selectedIndex == indexPath.row) {
-        return 190;
+        return 220;
     } else {
         return 44;
     }
@@ -224,6 +234,19 @@
     selectedIndex = -1;
     
     [self getData];
+}
+
+- (NSString *)getCouponList:(NSArray<Coupon> *)coupons {
+    NSString *result = [NSString new];
+    
+    for (Item *item in coupons) {
+        NSString *couponName = [item valueForKey:@"name"];
+        NSString *value = [NSString stringWithFormat:@"%@", [item valueForKey:@"value"]];
+        NSString *nameAndQuantity = [NSString stringWithFormat:@"%@(%@) ", couponName, value];
+        result = [result stringByAppendingString:nameAndQuantity];
+    }
+    
+    return result;
 }
 
 @end

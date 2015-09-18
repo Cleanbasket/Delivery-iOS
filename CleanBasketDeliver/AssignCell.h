@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @protocol FinishAssignDelegate <NSObject>
-
 - (void)finishOrder;
-
+- (void)performSegue:(id)sender index:(NSInteger)index;
 @end
 
 @interface AssignCell : UITableViewCell <UIActionSheetDelegate>
@@ -27,5 +26,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *noteLabel;
 @property (weak, nonatomic) IBOutlet UIButton *assignButton;
 @property (weak, nonatomic) IBOutlet UIButton *callPhone;
+@property (weak, nonatomic) IBOutlet UILabel *dropOffDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *couponLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mileageLabel;
+@property (weak, nonatomic) IBOutlet UIButton *modifyButton;
 
 @end

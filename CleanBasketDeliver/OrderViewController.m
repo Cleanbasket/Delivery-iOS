@@ -56,6 +56,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.searchBarView.delegate = self;
+    self.searchBarView.showsSearchResultsButton = YES;
     
     //Set index to -1 saying no cell is expanded or should expand.
     selectedIndex = -1;
@@ -120,8 +122,13 @@
         cell.stateLabel.textColor = [UIColor blackColor];
         cell.noteLabel.textColor = [UIColor blackColor];
     }
-    
-    NSString *price = [NSString stringWithFormat:@"%@", [order objectForKey:@"price"]];
+      
+    NSString *price;
+    if ([[order objectForKey:@"payment_method"] integerValue] == 3) {
+        price = [NSString stringWithFormat:@"인앱 %@", [order objectForKey:@"price"]];
+    } else {
+        price = [NSString stringWithFormat:@"%@", [order objectForKey:@"price"]];
+    }
     
     NSString *address = [order objectForKey:@"address"];
     NSString *addr_building = [order objectForKey:@"addr_building"];
@@ -134,7 +141,7 @@
     NSRange needleRange = NSMakeRange(0, 16);
     NSString *pickUpDate = [[order objectForKey:@"pickup_date"] substringWithRange:needleRange];
     NSString *dropOffDate = [[order objectForKey:@"dropoff_date"] substringWithRange:needleRange];
-
+    
     cell.pickUpLabel.text = pickUpDate;
     cell.dropOffLabel.text = dropOffDate;
     cell.orderNumberLabel.text = [order objectForKey:@"order_number"];
@@ -144,7 +151,7 @@
     cell.memoLabel.text = [order objectForKey:@"memo"];
     cell.itemLabel.text = [self getItemList:items];
     cell.couponLabel.text = [self getCouponList:coupons];
-    cell.mileageLabel.text = [NSString stringWithFormat:@"%@", [order objectForKey:@"mileage"]];
+    cell.mileageLabel.text = [NSString stringWithFormat:@"마일리지 %@", [order objectForKey:@"mileage"]];
     cell.stateLabel.text = [self getState:order];
     cell.noteLabel.text = [order objectForKey:@"note"];
 
@@ -395,6 +402,76 @@
 
 - (IBAction)loadOrder:(id)sender {
     [self getMoreData];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length == 4)
+        [self getOrderByOid:searchBar.text];
+    else if (searchText.length == 11)
+        [self getOrderByPhone:searchBar.text];
+    else if (searchText.length == 0)
+        [self getData];
+}
+
+- (void)getOrderByOid:(NSString *)oid {
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    NSString* root = [dict objectForKey:@"ROOT"];
+    NSString* address = [dict objectForKey:@"DELIVERER_ORDER"];
+    
+    afManager = [AFHTTPRequestOperationManager manager];
+    afManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [afManager setRequestSerializer:[AFHTTPRequestSerializer new]];
+    afManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [afManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [afManager GET:[NSString stringWithFormat:@"%@%@/%@", root, address, oid] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSNumber *value = responseObject[@"constant"];
+
+        NSMutableArray *orders;
+        switch ([value integerValue]) {
+            case CBServerConstantSuccess:
+                orders = [NSJSONSerialization JSONObjectWithData: [responseObject[@"data"] dataUsingEncoding:NSUTF8StringEncoding]
+                                                options: NSJSONReadingMutableContainers
+                                                  error: nil];
+
+                [dataArray removeAllObjects];
+                [dataArray addObject:orders];
+                
+                [self.tableView reloadData];
+                break;
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+    }];
+}
+
+- (void)getOrderByPhone:(NSString *)phone {
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    NSString* root = [dict objectForKey:@"ROOT"];
+    NSString* address = [dict objectForKey:@"DELIVERER_ORDER_PHONE"];
+    
+    afManager = [AFHTTPRequestOperationManager manager];
+    afManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [afManager setRequestSerializer:[AFHTTPRequestSerializer new]];
+    afManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [afManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [afManager POST:[NSString stringWithFormat:@"%@%@", root, address] parameters:@{@"phone":phone} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSNumber *value = responseObject[@"constant"];
+        
+        switch ([value integerValue]) {
+            case CBServerConstantSuccess:
+                [dataArray removeAllObjects];
+                dataArray = [NSJSONSerialization JSONObjectWithData: [responseObject[@"data"] dataUsingEncoding:NSUTF8StringEncoding]
+                                                         options: NSJSONReadingMutableContainers
+                                                           error: nil];
+                
+                [self.tableView reloadData];
+                break;
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 @end

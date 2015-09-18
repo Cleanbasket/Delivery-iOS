@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ROOT</key>
-	<string>http://localhost:8080/wash/</string>
+	<string>https://www.cleanbasket.co.kr/</string>
 	<key>LOGIN</key>
 	<string>auth</string>
 	<key>REGID</key>
@@ -18,6 +18,8 @@
 	<string>deliverer/join</string>
 	<key>DELIVERER_ORDER</key>
 	<string>deliverer/order</string>
+	<key>DELIVERER_ORDER_PHONE</key>
+	<string>deliverer/order/phone</string>
 	<key>DELIVERER_LIST</key>
 	<string>deliverer/list</string>
 	<key>LOGIN_CHECK</key>

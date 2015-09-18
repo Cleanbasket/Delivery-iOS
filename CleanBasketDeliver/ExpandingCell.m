@@ -20,15 +20,32 @@
 @synthesize typeLabel, datetimeLabel, orderNumberLabel, addressLabel, contactLabel, priceLabel, itemLabel, memoLabel, noteLabel;
 
 - (IBAction)buttonFinish:(id)sender {
-    [self showConfirmationAlert];
+    if (self.tag > 2) {
+        [self showDropOffConfirmationAlert];
+    } else {
+        [self showPickUpConfirmationAlert];
+
+    }
 }
 
-- (void) showConfirmationAlert {
+- (void) showDropOffConfirmationAlert {
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Question"
-                                                   message:@"확실합니까?"
+                                                   message:@"완료하시겠습니까? 결제 수단을 선택하세요."
                                                   delegate:self
-                                         cancelButtonTitle:@"No"
-                                         otherButtonTitles:@"Yes", nil];
+                                         cancelButtonTitle:@"취소"
+                                         otherButtonTitles:@"현장 현금 수령", @"현장 카드 결제", @"계좌이체", @"인앱 결제", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField *alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.placeholder = @"특이사항이 있으면 남겨주세요";
+    [alert show];
+}
+
+- (void) showPickUpConfirmationAlert {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Question"
+                                                   message:@"완료하시겠습니까? 특이 사항을 입력하세요."
+                                                  delegate:self
+                                         cancelButtonTitle:@"취소"
+                                         otherButtonTitles:@"확인", nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     UITextField *alertTextField = [alert textFieldAtIndex:0];
     alertTextField.placeholder = @"특이사항이 있으면 남겨주세요";
@@ -57,9 +74,9 @@
     NSArray* array = [[orderNumberLabel text] componentsSeparatedByString: @"-"];
     NSString *oid = [array objectAtIndex:1];
 
-    if (buttonIndex == 1) {
+    if (buttonIndex > 0) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-            NSDictionary *parameters = @{@"oid":oid, @"note":[[alertView textFieldAtIndex:0] text]};
+            NSDictionary *parameters = @{@"oid":oid, @"note":[[alertView textFieldAtIndex:0] text], @"payment_method":[NSString stringWithFormat:@"%ld", (long) (buttonIndex - 1)]};
             
             NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
             NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];

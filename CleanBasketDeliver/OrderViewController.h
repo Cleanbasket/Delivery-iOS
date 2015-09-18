@@ -10,11 +10,12 @@
 #import "order.h"
 #import "OrderCell.h"
 
-@interface OrderViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SegueDelegate> {
+@interface OrderViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, SegueDelegate> {
     NSInteger selectedIndex;
 }
 
 @property NSMutableArray<Order> *dataArray;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBarView;
 @property (weak, nonatomic) IBOutlet UIButton *loadOrder;
 
 @end

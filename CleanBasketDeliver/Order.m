@@ -31,6 +31,8 @@
         self.pickup_date = dictionary[@"pickup_date"];
         self.pickup_man = [dictionary[@"pickup_man"] longValue];
         self.price = [dictionary[@"price"] longValue];
+        self.mileage = [dictionary[@"mileage"] longValue];
+        self.payment_method = [dictionary[@"payment_method"] longValue];
         self.rdate = dictionary[@"rdate"];
         self.state = [dictionary[@"state"] integerValue];
         

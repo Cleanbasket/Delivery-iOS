@@ -36,10 +36,11 @@
 @property NSString *pickup_date;
 @property long pickup_man;
 @property long price;
+@property long mileage;
+@property long payment_method;
 @property NSString *rdate;
 @property long state;
 @property NSDate *order_date;
-@property NSInteger *mileage;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

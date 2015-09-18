@@ -18,7 +18,7 @@
 @end
 
 @implementation AssignCell
-@synthesize typeLabel, datetimeLabel, orderNumberLabel, addressLabel, contactLabel, priceLabel, itemLabel, memoLabel, noteLabel;
+@synthesize typeLabel, datetimeLabel, orderNumberLabel, addressLabel, contactLabel, priceLabel, itemLabel, memoLabel, noteLabel, dropOffDateLabel;
 
 - (IBAction)assign:(id)sender {
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
@@ -47,6 +47,14 @@
         [actionSheet addButtonWithTitle:[deliverer objectForKey:@"name"]];
     }
     
+    actionSheet.tag = 0;
+    [actionSheet showInView:self];
+}
+
+- (IBAction)modifyActionSheet:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"주문수정" delegate:self cancelButtonTitle:@"취소" destructiveButtonTitle:nil otherButtonTitles:@"수거/배달시간",  @"품목", @"가격", @"배정 취소", nil];
+    
+    actionSheet.tag = 1;
     [actionSheet showInView:self];
 }
 
@@ -83,14 +91,23 @@
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) return;
-    
+    if (actionSheet.tag == 0) {
+        if (buttonIndex == 0) return;
+
+        [self assignOrder:buttonIndex];
+    }
+    else if (actionSheet.tag == 1) {
+        [self modifyOrder:buttonIndex];
+    }
+ }
+
+- (void)assignOrder:(NSInteger)buttonIndex {
     NSDictionary *deliverer = [delivererList objectAtIndex:buttonIndex - 1];
     
     NSArray* array = [[orderNumberLabel text] componentsSeparatedByString: @"-"];
     NSString *oid = [array objectAtIndex:1];
     NSString *uid = [NSString stringWithFormat:@"%@", [deliverer objectForKey:@"uid"]];
-
+    
     NSDictionary *parameters = @{@"oid":oid, @"uid":uid};
     
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
@@ -127,6 +144,21 @@
         [self showErrorAlert];
         NSLog(@"%@", [error description]);
     }];
+}
+
+- (void)modifyOrder:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [self.delegate performSegue:self index:buttonIndex];
+    }
+    else if (buttonIndex == 1) {
+        [self.delegate performSegue:self index:buttonIndex];
+    }
+    else if (buttonIndex == 2) {
+        [self.delegate performSegue:self index:buttonIndex];
+    }
+    else if (buttonIndex == 3) {
+        [self.delegate performSegue:self index:buttonIndex];
+    }
 }
 
 @end
