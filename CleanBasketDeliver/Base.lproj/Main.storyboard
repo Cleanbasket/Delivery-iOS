@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7YK-zb-N0T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7YK-zb-N0T">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -55,32 +55,31 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1bO-Sj-tVE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1bO-Sj-tVE">
                                 <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="510" id="hnZ-3D-yQf"/>
                                 </constraints>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zO1-Fi-hI1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="p7o-VZ-Anv"/>
+                                    </constraints>
+                                    <state key="normal" title="불러오기">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="loadOrder:" destination="FGB-Co-ieW" eventType="touchUpInside" id="sLl-kF-mLE"/>
+                                    </connections>
+                                </button>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zO1-Fi-hI1">
-                                <rect key="frame" x="157" y="588" width="60" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="p7o-VZ-Anv"/>
-                                </constraints>
-                                <state key="normal" title="불러오기">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="loadOrder:" destination="FGB-Co-ieW" eventType="touchUpInside" id="sLl-kF-mLE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1bO-Sj-tVE" firstAttribute="leading" secondItem="jRD-N5-0oL" secondAttribute="leading" id="9YO-bu-qs9"/>
                             <constraint firstItem="1bO-Sj-tVE" firstAttribute="trailing" secondItem="jRD-N5-0oL" secondAttribute="trailing" id="CpA-zH-e6b"/>
-                            <constraint firstItem="zO1-Fi-hI1" firstAttribute="bottom" secondItem="YCg-zl-LPW" secondAttribute="top" id="DNj-tf-0t9"/>
-                            <constraint firstItem="1bO-Sj-tVE" firstAttribute="centerX" secondItem="zO1-Fi-hI1" secondAttribute="centerX" id="O4A-Bs-8bP"/>
                             <constraint firstItem="1bO-Sj-tVE" firstAttribute="top" secondItem="jRD-N5-0oL" secondAttribute="bottom" id="VrB-6U-PSp"/>
                             <constraint firstItem="1bO-Sj-tVE" firstAttribute="bottom" secondItem="YCg-zl-LPW" secondAttribute="top" id="hJT-yO-yAD"/>
                             <constraint firstItem="1bO-Sj-tVE" firstAttribute="leading" secondItem="89l-VN-3jp" secondAttribute="leading" id="lxX-ho-UZw"/>
@@ -100,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="749.5" y="-1064.5"/>
         </scene>
-        <!--Modify Date Time View Controller-->
+        <!--수거/배달 시간 변경-->
         <scene sceneID="Chv-04-iWO">
             <objects>
                 <viewController id="4b3-Cl-do8" customClass="ModifyDateTimeViewController" sceneMemberID="viewController">
@@ -134,18 +133,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gS-7N-E7v">
-                                <rect key="frame" x="164" y="588" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="ruJ-Ls-WNy"/>
-                                </constraints>
-                                <state key="normal" title="변경">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonModify:" destination="4b3-Cl-do8" eventType="touchUpInside" id="Niq-vA-tMH"/>
-                                </connections>
-                            </button>
                             <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="b2k-f6-eL0">
                                 <rect key="frame" x="0.0" y="300" width="375" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="459089470.51586401">
@@ -163,14 +150,21 @@
                             <constraint firstItem="20L-4K-34l" firstAttribute="leading" secondItem="K4t-WI-yD9" secondAttribute="leading" id="CvN-et-37s"/>
                             <constraint firstItem="b2k-f6-eL0" firstAttribute="trailing" secondItem="vOD-Tt-vF1" secondAttribute="trailing" id="DDh-C9-8wv"/>
                             <constraint firstAttribute="trailing" secondItem="vOD-Tt-vF1" secondAttribute="trailing" id="DWJ-zg-YK9"/>
-                            <constraint firstItem="9gS-7N-E7v" firstAttribute="bottom" secondItem="ydt-OC-4z7" secondAttribute="top" id="J1n-dK-Knp"/>
                             <constraint firstItem="b2k-f6-eL0" firstAttribute="leading" secondItem="vOD-Tt-vF1" secondAttribute="leading" id="Mmc-dd-tMY"/>
                             <constraint firstItem="20L-4K-34l" firstAttribute="trailing" secondItem="K4t-WI-yD9" secondAttribute="trailing" id="OHh-dg-BOt"/>
-                            <constraint firstItem="vOD-Tt-vF1" firstAttribute="centerX" secondItem="9gS-7N-E7v" secondAttribute="centerX" id="W6h-4D-c4h"/>
                             <constraint firstItem="K4t-WI-yD9" firstAttribute="centerX" secondItem="vOD-Tt-vF1" secondAttribute="centerX" id="YRy-RR-NEc"/>
                             <constraint firstItem="K4t-WI-yD9" firstAttribute="top" secondItem="aRI-On-Mrt" secondAttribute="bottom" constant="8" symbolic="YES" id="c4Q-Py-U1y"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="수거/배달 시간 변경" id="Sgk-MK-j9V">
+                        <barButtonItem key="rightBarButtonItem" title="변경하기" id="5K5-lE-PbL">
+                            <connections>
+                                <action selector="buttonModify:" destination="4b3-Cl-do8" id="qh3-3k-Qev"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dropoffDatePicker" destination="b2k-f6-eL0" id="wwP-eg-yyk"/>
                         <outlet property="pickupDatePicker" destination="vOD-Tt-vF1" id="eem-Rn-C4b"/>
@@ -193,7 +187,7 @@
                                 <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NgJ-Ua-prM" id="YQN-BE-6ne">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="아이템" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xu-6T-GMV">
@@ -584,7 +578,7 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DtU-i0-8YO"/>
         <segue reference="SGC-rc-Kwr"/>
+        <segue reference="DtU-i0-8YO"/>
     </inferredMetricsTieBreakers>
 </document>

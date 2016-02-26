@@ -335,6 +335,13 @@
     return result;
 }
 
+//- (void)tableView:(UITableView *)tableView
+//  willDisplayCell:(UITableViewCell *)cell
+//forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self getMoreData];
+//}
+
 - (NSString *)getItemList:(NSArray<Item> *)items {
     NSString *result = [NSString new];
     
