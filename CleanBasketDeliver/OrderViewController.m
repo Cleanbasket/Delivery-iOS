@@ -12,6 +12,8 @@
 #import "AFNetworking.h"
 #import "order.h"
 
+
+
 @interface OrderViewController () {
     AFHTTPRequestOperationManager *afManager;
 }
@@ -160,6 +162,13 @@
     cell.delegate = self;
     
     return cell;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    
+    [searchBar resignFirstResponder];
+    
 }
 
 - (NSString *)getState:(NSDictionary *)order {
@@ -407,12 +416,17 @@
     }];
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.tableView endEditing:YES];
+}
+
 - (IBAction)loadOrder:(id)sender {
     [self getMoreData];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    if (searchText.length == 4)
+    if (searchText.length <= 5)
         [self getOrderByOid:searchBar.text];
     else if (searchText.length == 11)
         [self getOrderByPhone:searchBar.text];
