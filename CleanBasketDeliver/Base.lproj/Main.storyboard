@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pxq-cj-paV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pxq-cj-paV">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -114,7 +114,7 @@
             </objects>
             <point key="canvasLocation" x="749" y="-1065"/>
         </scene>
-        <!--수거/배달 시간 변경-->
+        <!--Modify Date Time View Controller-->
         <scene sceneID="Chv-04-iWO">
             <objects>
                 <viewController id="4b3-Cl-do8" customClass="ModifyDateTimeViewController" sceneMemberID="viewController">
@@ -155,6 +155,30 @@
                                 </date>
                                 <locale key="locale" localeIdentifier="ko"/>
                             </datePicker>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUd-2F-qDX">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="0.51372549020000002" green="0.85882352939999995" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem id="eQm-r6-7RF">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="g2g-25-SgD">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="alz-Se-8cM">
+                                                <rect key="frame" x="446" y="7" width="134" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="변경하기">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonModify:" destination="4b3-Cl-do8" eventType="touchUpInside" id="ZQs-K6-kEZ"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -165,20 +189,15 @@
                             <constraint firstItem="20L-4K-34l" firstAttribute="leading" secondItem="K4t-WI-yD9" secondAttribute="leading" id="CvN-et-37s"/>
                             <constraint firstItem="b2k-f6-eL0" firstAttribute="trailing" secondItem="vOD-Tt-vF1" secondAttribute="trailing" id="DDh-C9-8wv"/>
                             <constraint firstAttribute="trailing" secondItem="vOD-Tt-vF1" secondAttribute="trailing" id="DWJ-zg-YK9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VUd-2F-qDX" secondAttribute="trailing" constant="-20" id="HFz-vB-NyP"/>
                             <constraint firstItem="b2k-f6-eL0" firstAttribute="leading" secondItem="vOD-Tt-vF1" secondAttribute="leading" id="Mmc-dd-tMY"/>
                             <constraint firstItem="20L-4K-34l" firstAttribute="trailing" secondItem="K4t-WI-yD9" secondAttribute="trailing" id="OHh-dg-BOt"/>
                             <constraint firstItem="K4t-WI-yD9" firstAttribute="centerX" secondItem="vOD-Tt-vF1" secondAttribute="centerX" id="YRy-RR-NEc"/>
-                            <constraint firstItem="K4t-WI-yD9" firstAttribute="top" secondItem="aRI-On-Mrt" secondAttribute="bottom" constant="8" symbolic="YES" id="c4Q-Py-U1y"/>
+                            <constraint firstItem="VUd-2F-qDX" firstAttribute="leading" secondItem="y4p-AF-x0o" secondAttribute="leadingMargin" constant="-20" id="aL4-2d-Sha"/>
+                            <constraint firstItem="K4t-WI-yD9" firstAttribute="top" secondItem="aRI-On-Mrt" secondAttribute="bottom" constant="52" id="c4Q-Py-U1y"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="수거/배달 시간 변경" id="Sgk-MK-j9V">
-                        <barButtonItem key="rightBarButtonItem" title="변경하기" id="5K5-lE-PbL">
-                            <connections>
-                                <action selector="buttonModify:" destination="4b3-Cl-do8" id="qh3-3k-Qev"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dropoffDatePicker" destination="b2k-f6-eL0" id="wwP-eg-yyk"/>
@@ -202,7 +221,7 @@
                                 <rect key="frame" x="0.0" y="22" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NgJ-Ua-prM" id="YQN-BE-6ne">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="아이템" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xu-6T-GMV">
@@ -610,7 +629,7 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DtU-i0-8YO"/>
-        <segue reference="SGC-rc-Kwr"/>
+        <segue reference="HLy-CI-uw7"/>
+        <segue reference="qgJ-fO-boU"/>
     </inferredMetricsTieBreakers>
 </document>

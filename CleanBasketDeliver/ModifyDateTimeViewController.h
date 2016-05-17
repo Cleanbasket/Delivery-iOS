@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *pickupDatePicker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *dropoffDatePicker;
+
 - (void)setOrder:(NSDictionary *)order;
+
 
 @end
