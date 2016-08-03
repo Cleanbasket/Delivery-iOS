@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,7 +50,7 @@
 		14EEA9191B56657400EA0A9C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EEA9181B56657400EA0A9C /* RegisterViewController.m */; };
 		14F6A8011B4FF44100380D8A /* Keychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F6A8001B4FF44100380D8A /* Keychain.m */; };
 		14F78D391B5D1CB8004E6330 /* ModifyDateTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F78D381B5D1CB8004E6330 /* ModifyDateTimeViewController.m */; };
-		C076639F1569220D6D66478F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7798A8D7DD2907B62E3270 /* libPods.a */; };
+		E3CC3DF5EC2BB92D1C7248F4 /* libPods-CleanBasketDeliver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6373EA0EC9B1CE4CC341374D /* libPods-CleanBasketDeliver.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04C2F360EADCA9EF3422FDB2 /* Pods-CleanBasketDeliver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanBasketDeliver.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanBasketDeliver/Pods-CleanBasketDeliver.release.xcconfig"; sourceTree = "<group>"; };
 		141647BA1B53D4D000874FA5 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		141647BB1B53D4D000874FA5 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		141CC9581B63C01700B9AC4C /* ItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemTableViewController.h; path = ../ItemTableViewController.h; sourceTree = "<group>"; };
@@ -133,9 +134,8 @@
 		14F6A8001B4FF44100380D8A /* Keychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keychain.m; sourceTree = "<group>"; };
 		14F78D371B5D1CB8004E6330 /* ModifyDateTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyDateTimeViewController.h; sourceTree = "<group>"; };
 		14F78D381B5D1CB8004E6330 /* ModifyDateTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyDateTimeViewController.m; sourceTree = "<group>"; };
-		6D7798A8D7DD2907B62E3270 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDEBDC72CB857F5D1164BBCB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		E29CADCB6B6C85CB8CADE2D2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6373EA0EC9B1CE4CC341374D /* libPods-CleanBasketDeliver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CleanBasketDeliver.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0F058DB294EF5F39870B33 /* Pods-CleanBasketDeliver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanBasketDeliver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CleanBasketDeliver/Pods-CleanBasketDeliver.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C076639F1569220D6D66478F /* libPods.a in Frameworks */,
+				E3CC3DF5EC2BB92D1C7248F4 /* libPods-CleanBasketDeliver.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,15 +157,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03F360FF9512EEFFA41302B5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E29CADCB6B6C85CB8CADE2D2 /* Pods.debug.xcconfig */,
-				BDEBDC72CB857F5D1164BBCB /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		14362ABF1B675D5600D00AF5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,8 +172,8 @@
 				147BCA0D1B1D7574008A3404 /* CleanBasketDeliver */,
 				147BCA2A1B1D7574008A3404 /* CleanBasketDeliverTests */,
 				147BCA0C1B1D7574008A3404 /* Products */,
-				03F360FF9512EEFFA41302B5 /* Pods */,
-				E4DD3A535F7A6B6BAA8D1092 /* Frameworks */,
+				F486D022F56AB6A4BE1CA0FA /* Pods */,
+				DC13035C798581FD9D067C37 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -323,12 +314,21 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
-		E4DD3A535F7A6B6BAA8D1092 /* Frameworks */ = {
+		DC13035C798581FD9D067C37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6D7798A8D7DD2907B62E3270 /* libPods.a */,
+				6373EA0EC9B1CE4CC341374D /* libPods-CleanBasketDeliver.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F486D022F56AB6A4BE1CA0FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA0F058DB294EF5F39870B33 /* Pods-CleanBasketDeliver.debug.xcconfig */,
+				04C2F360EADCA9EF3422FDB2 /* Pods-CleanBasketDeliver.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,12 +338,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 147BCA311B1D7574008A3404 /* Build configuration list for PBXNativeTarget "CleanBasketDeliver" */;
 			buildPhases = (
-				CC3A4EF4754C078E79C5FE1F /* Check Pods Manifest.lock */,
+				E4503993D697D6679535145B /* [CP] Check Pods Manifest.lock */,
 				147BCA071B1D7574008A3404 /* Sources */,
 				147BCA081B1D7574008A3404 /* Frameworks */,
 				147BCA091B1D7574008A3404 /* Resources */,
-				B69A0B8E56484FB590AF5470 /* Copy Pods Resources */,
-				2BA9C55902B9BDA4B27C41AB /* Embed Pods Frameworks */,
+				559E2CC7CF490208744DE841 /* [CP] Embed Pods Frameworks */,
+				11212550CC259B998820DE3B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -392,7 +392,7 @@
 				};
 			};
 			buildConfigurationList = 147BCA061B1D7574008A3404 /* Build configuration list for PBXProject "CleanBasketDeliver" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -448,44 +448,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2BA9C55902B9BDA4B27C41AB /* Embed Pods Frameworks */ = {
+		11212550CC259B998820DE3B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CleanBasketDeliver/Pods-CleanBasketDeliver-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B69A0B8E56484FB590AF5470 /* Copy Pods Resources */ = {
+		559E2CC7CF490208744DE841 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CleanBasketDeliver/Pods-CleanBasketDeliver-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CC3A4EF4754C078E79C5FE1F /* Check Pods Manifest.lock */ = {
+		E4503993D697D6679535145B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,14 +641,18 @@
 		};
 		147BCA321B1D7574008A3404 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E29CADCB6B6C85CB8CADE2D2 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = AA0F058DB294EF5F39870B33 /* Pods-CleanBasketDeliver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CleanBasketDeliver/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -657,14 +661,18 @@
 		};
 		147BCA331B1D7574008A3404 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDEBDC72CB857F5D1164BBCB /* Pods.release.xcconfig */;
+			baseConfigurationReference = 04C2F360EADCA9EF3422FDB2 /* Pods-CleanBasketDeliver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CleanBasketDeliver/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
