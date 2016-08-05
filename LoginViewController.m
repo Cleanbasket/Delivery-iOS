@@ -26,6 +26,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSAttributedString *userId = [[NSAttributedString alloc] initWithString:@"이메일" attributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
+    self.userIDTextField.attributedPlaceholder = userId;
+    
+    NSAttributedString *password = [[NSAttributedString alloc] initWithString:@"비밀번호" attributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
+    self.passwordTextField.attributedPlaceholder = password;
+    
     if ([self getUserDefault]) {
         [_userIDTextField setText:[self getUserDefault]];
     
