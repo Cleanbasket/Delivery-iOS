@@ -124,6 +124,8 @@
         afManager.requestSerializer = [AFJSONRequestSerializer serializer];
         [afManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         afManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+
+        
         [afManager POST:[NSString stringWithFormat:@"%@%@", root, address] parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
             [formData appendPartWithFileData:imageData name:@"file" fileName:@"file.jpg" mimeType:@"image/jpeg"];
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -173,5 +175,30 @@
     return true;
 }
 
+- (IBAction)EditingBegin:(id)sender {
+    [self animateTextField:_phoneLabel up:YES];
+}
+
+- (IBAction)EditingEnd:(id)sender {
+    [self animateTextField:_phoneLabel up:NO];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
+-(void)animateTextField:(UITextField*)textField up:(BOOL)up
+{
+    const int movementDistance = -130; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? movementDistance : -movementDistance);
+    
+    [UIView beginAnimations: @"animateTextField" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
+}
 
 @end

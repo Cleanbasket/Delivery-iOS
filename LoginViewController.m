@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.m
+//  LoginViewController.m
 //  CleanBasketDeliver
 //
 //  Created by Theodore Yongbin Cha on 2015. 7. 15..

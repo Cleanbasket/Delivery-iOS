@@ -512,6 +512,10 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="EditingBegin:" destination="tDv-Ju-ORy" eventType="editingDidBegin" id="Pyv-Cd-j1W"/>
+                                    <action selector="EditingEnd:" destination="tDv-Ju-ORy" eventType="editingDidEnd" id="sfF-sM-omv"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMf-6o-9hO">
                                 <rect key="frame" x="280" y="497" width="170" height="45"/>
@@ -550,24 +554,18 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <connections>
+                                    <action selector="EditingBegin:" destination="tDv-Ju-ORy" eventType="editingDidBegin" id="87t-KK-1fo"/>
+                                    <action selector="EditingEnd:" destination="tDv-Ju-ORy" eventType="editingDidEnd" id="y3i-Pn-PkC"/>
+                                </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="x9z-as-Foq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="x9z-as-Foq">
                                 <rect key="frame" x="36" y="95" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="3Ik-IP-tdI"/>
                                     <constraint firstAttribute="width" constant="100" id="ahL-ML-8GR"/>
                                 </constraints>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moI-cb-Uuw">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.36470588240000001" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="크린파트너 등록" id="zBk-U6-s8u"/>
-                                </items>
-                            </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="고객에게 보이는 사진입니다. 반드시 본인 얼굴이 잘 나온 사진을 선택해주세요." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="laf-EA-gcN">
                                 <rect key="frame" x="150" y="95" width="430" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -600,6 +598,16 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IRI-dE-zMt">
                                 <rect key="frame" x="271" y="497" width="14" height="50"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moI-cb-Uuw">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="0.36470588240000001" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="크린파트너 등록" id="zBk-U6-s8u"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -621,12 +629,10 @@
                             <constraint firstItem="T03-32-iP8" firstAttribute="top" secondItem="kFa-wA-Thv" secondAttribute="bottom" constant="10" id="Y8q-xE-24k"/>
                             <constraint firstItem="PUX-ua-iwM" firstAttribute="centerX" secondItem="ktx-MC-iCs" secondAttribute="centerX" id="bYt-kz-i2o"/>
                             <constraint firstItem="AMf-6o-9hO" firstAttribute="leading" secondItem="IRI-dE-zMt" secondAttribute="trailing" constant="-5" id="dUr-My-HXS"/>
-                            <constraint firstItem="moI-cb-Uuw" firstAttribute="top" secondItem="YgH-Nr-EP1" secondAttribute="bottom" id="dne-zA-DTW"/>
                             <constraint firstItem="laf-EA-gcN" firstAttribute="leading" secondItem="x9z-as-Foq" secondAttribute="trailing" constant="14" id="juW-ru-zcc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8nL-dK-F39" secondAttribute="trailing" constant="22" id="lKl-Vw-ITF"/>
                             <constraint firstItem="kFa-wA-Thv" firstAttribute="centerX" secondItem="ktx-MC-iCs" secondAttribute="centerX" id="ls0-rD-sHw"/>
                             <constraint firstItem="IRI-dE-zMt" firstAttribute="centerX" secondItem="ktx-MC-iCs" secondAttribute="centerX" id="nsT-3p-WJ3"/>
-                            <constraint firstItem="x9z-as-Foq" firstAttribute="top" secondItem="moI-cb-Uuw" secondAttribute="bottom" constant="31" id="nz2-l9-kiF"/>
                             <constraint firstItem="x9z-as-Foq" firstAttribute="leading" secondItem="ktx-MC-iCs" secondAttribute="leadingMargin" constant="16" id="ted-zJ-OvL"/>
                             <constraint firstItem="8nL-dK-F39" firstAttribute="leading" secondItem="ktx-MC-iCs" secondAttribute="leadingMargin" constant="23" id="urJ-Hd-gD6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="T03-32-iP8" secondAttribute="trailing" constant="22" id="v0X-Dc-rjT"/>
