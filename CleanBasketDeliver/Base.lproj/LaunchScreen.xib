@@ -18,13 +18,32 @@
                         <constraint firstAttribute="width" constant="184" id="FBY-qV-Qfq"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Copyright (c) 2016년 WashAppKorea. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iS-RZ-M1A">
+                    <rect key="frame" x="0.0" y="539" width="320" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="orX-Fa-BbD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CLEAN MANAGER V2.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRK-1B-XpC">
+                    <rect key="frame" x="75" y="454" width="170" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.36470588235294116" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="dRK-1B-XpC" firstAttribute="top" secondItem="A3J-4T-VUo" secondAttribute="bottom" constant="62" id="51u-7Y-olS"/>
+                <constraint firstItem="dRK-1B-XpC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="75" id="9Kt-5g-xKz"/>
                 <constraint firstAttribute="bottom" secondItem="A3J-4T-VUo" secondAttribute="bottom" constant="176" id="MbS-A0-B6U"/>
                 <constraint firstAttribute="trailing" secondItem="A3J-4T-VUo" secondAttribute="trailing" constant="68" id="OzB-yG-qnH"/>
+                <constraint firstAttribute="trailing" secondItem="dRK-1B-XpC" secondAttribute="trailing" constant="75" id="h8g-sD-b84"/>
                 <constraint firstItem="A3J-4T-VUo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="68" id="nxA-tG-OiE"/>
                 <constraint firstItem="A3J-4T-VUo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="175" id="rUI-sk-2xs"/>
+                <constraint firstAttribute="bottom" secondItem="8iS-RZ-M1A" secondAttribute="bottom" constant="8" id="tGR-Z3-fM8"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

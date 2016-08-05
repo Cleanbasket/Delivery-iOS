@@ -114,35 +114,45 @@
     
     // Later
     if (selectedIndex == indexPath.row) {
-        cell.contentView.backgroundColor = [UIColor darkGrayColor];
-        cell.typeLabel.textColor = [UIColor whiteColor];
-        cell.datetimeLabel.textColor = [UIColor whiteColor];
-        cell.orderNumberLabel.textColor = [UIColor whiteColor];
-        cell.addressLabel.textColor = [UIColor whiteColor];
-        cell.contactLabel.textColor = [UIColor whiteColor];
-        cell.priceLabel.textColor = [UIColor whiteColor];
-        cell.itemLabel.textColor = [UIColor whiteColor];
-        cell.memoLabel.textColor = [UIColor whiteColor];
-        cell.noteLabel.textColor = [UIColor whiteColor];
-        cell.couponLabel.textColor = [UIColor whiteColor];
-        cell.mileageLabel.textColor = [UIColor whiteColor];
+        cell.contentView.backgroundColor = [UIColor whiteColor];
+        cell.datetimeLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.orderNumberLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.addressLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.contactLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.priceLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.itemLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.memoLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.noteLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.couponLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.mileageLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
     }
     else {
-        if (state == 2 || state == 4)
-            cell.contentView.backgroundColor = [UIColor lightGrayColor];
-        else
+        if (state == 2 || state == 4){
+            cell.contentView.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0];
+            cell.typeLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.datetimeLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.orderNumberLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.addressLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.contactLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.priceLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.itemLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.memoLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.couponLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.mileageLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.noteLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+        }
+        else{
             cell.contentView.backgroundColor = [UIColor whiteColor];
-        cell.typeLabel.textColor = [UIColor purpleColor];
-        cell.datetimeLabel.textColor = [UIColor blackColor];
-        cell.orderNumberLabel.textColor = [UIColor blackColor];
-        cell.addressLabel.textColor = [UIColor blackColor];
-        cell.contactLabel.textColor = [UIColor blackColor];
-        cell.priceLabel.textColor = [UIColor blackColor];
-        cell.itemLabel.textColor = [UIColor blackColor];
-        cell.memoLabel.textColor = [UIColor blackColor];
-        cell.noteLabel.textColor = [UIColor blackColor];
-        cell.couponLabel.textColor = [UIColor blackColor];
-        cell.mileageLabel.textColor = [UIColor blackColor];
+            cell.orderNumberLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+            cell.addressLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+            cell.contactLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+            cell.priceLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+            cell.itemLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+            cell.memoLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+            cell.couponLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+            cell.mileageLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+            cell.noteLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        }
     }
     
     if (state < 3)
@@ -204,7 +214,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (selectedIndex == indexPath.row) {
-        return 220;
+        return 230;
     } else {
         return 55;
     }
