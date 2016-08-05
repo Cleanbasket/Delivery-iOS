@@ -378,19 +378,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg_login" translatesAutoresizingMaskIntoConstraints="NO" id="eWe-t5-njk">
-                                <rect key="frame" x="0.0" y="0.0" width="245" height="136"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" background="bg_login_item" translatesAutoresizingMaskIntoConstraints="NO" id="Jz3-cz-L5f">
-                                <rect key="frame" x="163" y="426" width="288" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="FMK-Zb-hJ2"/>
-                                    <constraint firstAttribute="width" constant="288" id="aDG-Vy-I52"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liP-B6-whL">
                                 <rect key="frame" x="163" y="480" width="287" height="46"/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -432,23 +419,37 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="emailBegin:" destination="pxq-cj-paV" eventType="editingDidBegin" id="xZG-WR-pcf"/>
+                                    <action selector="emailEnd:" destination="pxq-cj-paV" eventType="editingDidEnd" id="YEE-yU-Rsr"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" background="bg_login_item" translatesAutoresizingMaskIntoConstraints="NO" id="Jz3-cz-L5f">
+                                <rect key="frame" x="163" y="426" width="288" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="FMK-Zb-hJ2"/>
+                                    <constraint firstAttribute="width" constant="288" id="aDG-Vy-I52"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="emailBegin:" destination="pxq-cj-paV" eventType="editingDidBegin" id="2Hk-M4-4Q3"/>
+                                    <action selector="emailEnd:" destination="pxq-cj-paV" eventType="editingDidEnd" id="6xw-xA-0pw"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.36470588240000001" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eWe-t5-njk" firstAttribute="leading" secondItem="hYO-Pn-sFC" secondAttribute="leadingMargin" constant="-20" id="08U-gO-Js2"/>
                             <constraint firstItem="okp-f6-aOo" firstAttribute="top" secondItem="liP-B6-whL" secondAttribute="bottom" constant="10" id="GPU-xd-nwP"/>
                             <constraint firstItem="Jz3-cz-L5f" firstAttribute="centerX" secondItem="hYO-Pn-sFC" secondAttribute="centerX" id="La8-yc-DDS"/>
                             <constraint firstItem="f1I-0N-3uu" firstAttribute="top" secondItem="okp-f6-aOo" secondAttribute="bottom" constant="20" id="NPW-8f-KMN"/>
                             <constraint firstItem="liP-B6-whL" firstAttribute="centerX" secondItem="hYO-Pn-sFC" secondAttribute="centerX" id="O1d-2K-4XM"/>
-                            <constraint firstItem="eWe-t5-njk" firstAttribute="top" secondItem="pY9-Qy-5nu" secondAttribute="bottom" constant="-20" id="Xk0-gV-QeA"/>
                             <constraint firstItem="Jz3-cz-L5f" firstAttribute="top" secondItem="74x-uA-oj6" secondAttribute="bottom" constant="10" id="e10-8a-sa3"/>
                             <constraint firstItem="74x-uA-oj6" firstAttribute="centerX" secondItem="hYO-Pn-sFC" secondAttribute="centerX" id="eH4-6I-lZc"/>
-                            <constraint firstItem="f1I-0N-3uu" firstAttribute="top" secondItem="eWe-t5-njk" secondAttribute="bottom" id="jES-ah-bMm"/>
                             <constraint firstItem="okp-f6-aOo" firstAttribute="centerX" secondItem="hYO-Pn-sFC" secondAttribute="centerX" id="rPd-FK-W0H"/>
                             <constraint firstItem="liP-B6-whL" firstAttribute="top" secondItem="Jz3-cz-L5f" secondAttribute="bottom" constant="10" id="sB2-nM-25G"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eWe-t5-njk" secondAttribute="trailing" constant="-20" id="tZg-jb-EfZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tc8-vs-BUI"/>
@@ -539,7 +540,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tryRegister:" destination="tDv-Ju-ORy" eventType="touchUpInside" id="y6z-q8-dc9"/>
+                                    <action selector="cancle:" destination="tDv-Ju-ORy" eventType="touchUpInside" id="rN2-fo-9so"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="핸드폰 번호" textAlignment="center" minimumFontSize="17" background="bg_signup" translatesAutoresizingMaskIntoConstraints="NO" id="T03-32-iP8">
@@ -670,7 +671,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg_login" width="2956" height="3742"/>
         <image name="bg_login_item" width="824" height="117"/>
         <image name="bg_signup" width="884" height="125"/>
         <image name="first" width="30" height="30"/>

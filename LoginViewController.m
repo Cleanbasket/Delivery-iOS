@@ -1,9 +1,9 @@
 //
-//  LoginViewController.m
+//  RegisterViewController.m
 //  CleanBasketDeliver
 //
-//  Created by 강한용 on 2015. 6. 2..
-//  Copyright (c) 2015년 강한용. All rights reserved.
+//  Created by Theodore Yongbin Cha on 2015. 7. 15..
+//  Copyright (c) 2016년 WashAppKorea. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -12,6 +12,7 @@
 #import "MBProgressHUD.h"
 #import "CBConstants.h"
 #import "Keychain.h"
+
 
 @interface LoginViewController () {
     bool success;
@@ -26,12 +27,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_login"]];
+    imageview.frame = self.view.frame;
+    imageview.contentMode = UIViewContentModeScaleAspectFill;
+    [self.view insertSubview:imageview atIndex:0];
+    
     NSAttributedString *userId = [[NSAttributedString alloc] initWithString:@"이메일" attributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
     self.userIDTextField.attributedPlaceholder = userId;
     
     NSAttributedString *password = [[NSAttributedString alloc] initWithString:@"비밀번호" attributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }];
     self.passwordTextField.attributedPlaceholder = password;
     
+    // Keychain 등록 정보 가지고 오는 부분.
     if ([self getUserDefault]) {
         [_userIDTextField setText:[self getUserDefault]];
     
@@ -82,9 +89,33 @@
     }
 }
 
+- (IBAction)eamilTouchDown:(id)sender {
+    
+//    [self animateTextField:_userIDTextField up:YES];
+    
+}
+
+- (IBAction)emailBegin:(id)sender {
+    [self animateTextField:_userIDTextField up:YES];
+}
+
+- (IBAction)emailEnd:(id)sender {
+    [self animateTextField:_userIDTextField up:NO];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
+
+// 로그인 기능
+
 - (BOOL)signIn {
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary: @{
-                                                                                       @"email": [_userIDTextField text], @"password": [_passwordTextField text], @"remember": @"true", @"regid": @"" }];
+    NSMutableDictionary *parameters =[NSMutableDictionary dictionaryWithDictionary:
+                                      @{@"email": [_userIDTextField text],
+                                        @"password": [_passwordTextField text],
+                                        @"remember": @"true",
+                                        @"regid": @"" }];
     
     success = false;
     
@@ -194,6 +225,20 @@
     [hud hide:YES afterDelay:1];
     
     return;
+}
+
+-(void)animateTextField:(UITextField*)textField up:(BOOL)up
+{
+    const int movementDistance = -130; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? movementDistance : -movementDistance);
+    
+    [UIView beginAnimations: @"animateTextField" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
 }
 
 @end

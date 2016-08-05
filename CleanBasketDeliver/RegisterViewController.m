@@ -2,13 +2,16 @@
 //  RegisterViewController.m
 //  CleanBasketDeliver
 //
-//  Created by 강한용 on 2015. 7. 15..
-//  Copyright (c) 2015년 강한용. All rights reserved.
+//  Created by Theodore Yongbin Cha on 2015. 7. 15..
+//  Copyright (c) 2016년 WashAppKorea. All rights reserved.
 //
 
 #import "AFNetworking.h"
 #import "RegisterViewController.h"
 #import "CBConstants.h"
+#import "LoginViewController.h"
+
+#define kOFFSET_FOR_KEYBOARD 80.0
 
 @interface RegisterViewController () {
     AFHTTPRequestOperationManager *afManager;
@@ -55,6 +58,7 @@
 }
 
 - (void) showFinishAlert {
+    
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Success"
                                                    message:@"처리 성공"
                                                   delegate:self
@@ -94,10 +98,15 @@
 - (IBAction)tryRegister:(id)sender {
     if ([self checkEmpty]) {
         [self register];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     else {
         [self showErrorAlert];
     }
+}
+
+- (IBAction)cancle:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)register {
@@ -163,5 +172,6 @@
     
     return true;
 }
+
 
 @end
