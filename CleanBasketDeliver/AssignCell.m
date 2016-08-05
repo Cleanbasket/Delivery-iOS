@@ -151,12 +151,12 @@
         [self.delegate performSegue:self index:buttonIndex];
     }
     else if (buttonIndex == 1) {
+//        [self.delegate performSegue:self index:buttonIndex];
+    }
+    else if (buttonIndex == 1) {
         [self.delegate performSegue:self index:buttonIndex];
     }
     else if (buttonIndex == 2) {
-        [self.delegate performSegue:self index:buttonIndex];
-    }
-    else if (buttonIndex == 3) {
         [self.delegate performSegue:self index:buttonIndex];
     }
 }

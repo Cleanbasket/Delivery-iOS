@@ -87,6 +87,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.49 green:0.75 blue:0.78 alpha:1.0]];
+    
     //Set index to -1 saying no cell is expanded or should expand.
     selectedIndex = -1;
 }

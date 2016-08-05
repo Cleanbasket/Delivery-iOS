@@ -112,7 +112,6 @@
                         <outlet property="searchBarView" destination="jRD-N5-0oL" id="46x-CO-621"/>
                         <outlet property="tableView" destination="1bO-Sj-tVE" id="s9E-Fs-RCL"/>
                         <segue destination="4b3-Cl-do8" kind="show" identifier="modifyDateTime" id="SGC-rc-Kwr"/>
-                        <segue destination="n0V-fO-rKa" kind="show" identifier="modifyItem" id="DtU-i0-8YO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHF-nD-M75" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -217,13 +216,13 @@
         <scene sceneID="0cn-xC-3x6">
             <objects>
                 <tableViewController id="n0V-fO-rKa" customClass="ItemTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5JX-VE-YtP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5JX-VE-YtP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itemCell" id="NgJ-Ua-prM" customClass="ItemCell">
-                                <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NgJ-Ua-prM" id="YQN-BE-6ne">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -270,8 +269,21 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRR-V5-zdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationBar contentMode="scaleToFill" id="ZGO-EM-0qj">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="품목수정" id="e9H-Zx-pgK">
+                            <barButtonItem key="backBarButtonItem" title="뒤로가기" id="T52-Lg-7US"/>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
             </objects>
-            <point key="canvasLocation" x="1920.5" y="-320.5"/>
+            <point key="canvasLocation" x="1750" y="-401"/>
         </scene>
         <!--수거배정-->
         <scene sceneID="wg7-f3-ORb">
@@ -314,7 +326,6 @@
                     <connections>
                         <outlet property="tableView" destination="FU4-9y-iuH" id="svg-X6-IaS"/>
                         <segue destination="4b3-Cl-do8" kind="show" identifier="modifyDateTimeA" id="HLy-CI-uw7"/>
-                        <segue destination="n0V-fO-rKa" kind="show" identifier="modifyItemA" id="qgJ-fO-boU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -364,7 +375,6 @@
                     <connections>
                         <outlet property="tableView" destination="zAS-P4-jSa" id="FFy-ED-dZ0"/>
                         <segue destination="4b3-Cl-do8" kind="show" identifier="modifyDateTimeB" id="YoN-7S-rp8"/>
-                        <segue destination="n0V-fO-rKa" kind="show" identifier="modifyItemB" id="A2j-4q-Ihq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AB7-Qd-yeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -694,6 +704,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YoN-7S-rp8"/>
-        <segue reference="A2j-4q-Ihq"/>
     </inferredMetricsTieBreakers>
 </document>
