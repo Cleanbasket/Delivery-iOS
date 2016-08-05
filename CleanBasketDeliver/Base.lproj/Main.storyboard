@@ -30,7 +30,7 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="배달 주문" id="WmC-d1-eEK"/>
+                                    <navigationItem title="배정 주문" id="WmC-d1-eEK"/>
                                 </items>
                             </navigationBar>
                         </subviews>
