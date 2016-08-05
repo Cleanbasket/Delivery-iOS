@@ -216,7 +216,7 @@
     if (selectedIndex == indexPath.row) {
         return 230;
     } else {
-        return 55;
+        return 60;
     }
 }
 
