@@ -41,6 +41,10 @@
     [self.dropoffDatePicker setDate:[dateFormatter dateFromString:[orderData valueForKey:@"dropoff_date"]]];
 }
 
+- (IBAction)cancleEvent:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)buttonModify:(id)sender {
     NSDate *pickerDate = [_pickupDatePicker date];
     NSDate *dropoffDate = [_dropoffDatePicker date];

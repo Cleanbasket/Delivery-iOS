@@ -167,6 +167,19 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem id="eQm-r6-7RF">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="LLY-Cd-UFe">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Far-wg-pbh">
+                                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="취소하기">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancleEvent:" destination="4b3-Cl-do8" eventType="touchUpInside" id="ll1-b7-jz4"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="g2g-25-SgD">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="alz-Se-8cM">
                                                 <rect key="frame" x="446" y="7" width="134" height="30"/>
@@ -210,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMf-IF-jpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920.5" y="419.5"/>
+            <point key="canvasLocation" x="1919" y="414"/>
         </scene>
         <!--Item Table View Controller-->
         <scene sceneID="0cn-xC-3x6">
@@ -703,6 +716,6 @@
         <image name="profile" width="324" height="322"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YoN-7S-rp8"/>
+        <segue reference="HLy-CI-uw7"/>
     </inferredMetricsTieBreakers>
 </document>
