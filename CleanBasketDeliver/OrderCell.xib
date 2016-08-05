@@ -39,7 +39,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메모" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf0-Sz-Scf">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="메모" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf0-Sz-Scf">
                         <rect key="frame" x="55" y="116" width="298" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -95,7 +95,7 @@
                         <color key="textColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDT-nQ-05m">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDT-nQ-05m">
                         <rect key="frame" x="17" y="116" width="30" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -107,7 +107,7 @@
                         <color key="textColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="파트너 노트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnR-rg-bh0">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="파트너 노트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnR-rg-bh0">
                         <rect key="frame" x="17" y="168" width="65" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -139,7 +139,7 @@
                             <action selector="callPhone:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ukZ-GG-YJm"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="노트" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFV-DL-Nkc">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="노트" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFV-DL-Nkc">
                         <rect key="frame" x="83" y="168" width="277" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -154,20 +154,26 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="yZc-V5-t79" secondAttribute="trailing" constant="2" id="5KJ-6c-IBJ"/>
+                    <constraint firstItem="hf0-Sz-Scf" firstAttribute="leading" secondItem="nDT-nQ-05m" secondAttribute="trailing" constant="8" id="5v3-fJ-mRu"/>
                     <constraint firstItem="yZc-V5-t79" firstAttribute="leading" secondItem="xkl-N1-pFo" secondAttribute="trailing" constant="8" id="67e-VP-lr8"/>
                     <constraint firstItem="Gn6-cs-e7G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="9" id="Asd-HI-j0z"/>
+                    <constraint firstItem="UnR-rg-bh0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="9" id="BJE-N8-22f"/>
                     <constraint firstItem="KrP-CH-ThF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="9" id="GCV-FT-bpL"/>
+                    <constraint firstItem="bFV-DL-Nkc" firstAttribute="leading" secondItem="UnR-rg-bh0" secondAttribute="trailing" constant="1" id="MaP-Vg-fk6"/>
                     <constraint firstItem="5i1-PY-ZrE" firstAttribute="leading" secondItem="Htt-sY-VTN" secondAttribute="trailing" constant="8" id="Q2U-wy-AXl"/>
                     <constraint firstItem="JDm-Fb-iC7" firstAttribute="leading" secondItem="vqu-QT-93W" secondAttribute="trailing" constant="8" id="Shf-Ia-kzf"/>
+                    <constraint firstItem="nDT-nQ-05m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="9" id="Spe-Ev-mG1"/>
                     <constraint firstAttribute="trailingMargin" secondItem="QHi-WX-ChT" secondAttribute="trailing" constant="126" id="Svv-UI-97j"/>
                     <constraint firstAttribute="trailingMargin" secondItem="3v5-gc-DN9" secondAttribute="trailing" id="TdO-PQ-Icl"/>
                     <constraint firstAttribute="trailingMargin" secondItem="5i1-PY-ZrE" secondAttribute="trailing" constant="14" id="WKk-8O-Kpp"/>
                     <constraint firstItem="QHi-WX-ChT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="9" id="X5i-6M-98P"/>
                     <constraint firstItem="rDs-h2-1Mg" firstAttribute="leading" secondItem="qye-uK-dOu" secondAttribute="trailing" constant="8" id="Xr9-pc-J91"/>
                     <constraint firstItem="Htt-sY-VTN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="9" id="baT-2Z-Gqg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="bFV-DL-Nkc" secondAttribute="trailing" constant="7" id="cZO-N6-xvI"/>
                     <constraint firstItem="vqu-QT-93W" firstAttribute="leading" secondItem="qqN-0u-fan" secondAttribute="trailing" constant="8" id="diP-u4-mSq"/>
                     <constraint firstItem="2bQ-VQ-nRY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="9" id="dix-c3-eyb"/>
                     <constraint firstAttribute="trailingMargin" secondItem="yZc-V5-t79" secondAttribute="trailing" id="gOq-C0-n3z"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="hf0-Sz-Scf" secondAttribute="trailing" constant="14" id="myK-J9-xad"/>
                     <constraint firstAttribute="trailingMargin" secondItem="8kf-gY-HJq" secondAttribute="trailing" id="pnC-Gv-pwA"/>
                     <constraint firstItem="qqN-0u-fan" firstAttribute="leading" secondItem="Gn6-cs-e7G" secondAttribute="trailing" constant="9" id="xeh-Ki-v2N"/>
                 </constraints>

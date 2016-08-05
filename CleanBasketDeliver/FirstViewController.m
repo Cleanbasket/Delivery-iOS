@@ -115,7 +115,8 @@
     // Later
     if (selectedIndex == indexPath.row) {
         cell.contentView.backgroundColor = [UIColor whiteColor];
-        cell.datetimeLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.typeLabel.textColor = [UIColor colorWithRed:0.49 green:0.75 blue:0.78 alpha:1.0];
+        cell.datetimeLabel.textColor = [UIColor colorWithRed:0.49 green:0.75 blue:0.78 alpha:1.0];
         cell.orderNumberLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
         cell.addressLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
         cell.contactLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
@@ -143,6 +144,8 @@
         }
         else{
             cell.contentView.backgroundColor = [UIColor whiteColor];
+            cell.typeLabel.textColor = [UIColor colorWithRed:0.49 green:0.75 blue:0.78 alpha:1.0];
+            cell.datetimeLabel.textColor = [UIColor colorWithRed:0.49 green:0.75 blue:0.78 alpha:1.0];
             cell.orderNumberLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
             cell.addressLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
             cell.contactLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
