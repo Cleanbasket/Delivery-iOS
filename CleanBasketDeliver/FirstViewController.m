@@ -188,7 +188,22 @@
     cell.datetimeLabel.text = datetime;
     cell.orderNumberLabel.text = [order order_number];
     cell.addressLabel.text = [NSString stringWithFormat:@"%@ %@ %@ %@", address, addr_number, addr_building, addr_remainder];
-    cell.contactLabel.text = [order phone];
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
+    
+    NSDate *afterDate = [dateFormat dateFromString:datetime];
+    
+    NSDate* now = [NSDate date];
+    
+    NSTimeInterval diff = [now timeIntervalSinceDate:afterDate];
+    
+    if (diff < 60000){
+        cell.contactLabel.text = [order phone];
+    } else {
+        NSNumber *myDoubleNumber = [NSNumber numberWithDouble:diff];
+        cell.contactLabel.text = [myDoubleNumber stringValue];
+    }
     cell.priceLabel.text = price;
     cell.itemLabel.text = [self getItemList:items];
     cell.memoLabel.text = [order memo];

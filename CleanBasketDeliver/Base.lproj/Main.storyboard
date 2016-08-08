@@ -51,72 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="-321"/>
-        </scene>
-        <!--전체주문/검색-->
-        <scene sceneID="YhG-wV-kPk">
-            <objects>
-                <viewController id="FGB-Co-ieW" customClass="OrderViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bUS-xC-tUu"/>
-                        <viewControllerLayoutGuide type="bottom" id="YCg-zl-LPW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="89l-VN-3jp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" placeholder="주문번호 / 전화번호 입력" translatesAutoresizingMaskIntoConstraints="NO" id="jRD-N5-0oL">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1bO-Sj-tVE">
-                                <rect key="frame" x="0.0" y="64" width="600" height="479"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexTrackingBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zO1-Fi-hI1">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="60" id="p7o-VZ-Anv"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <state key="normal" title="불러오기">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="loadOrder:" destination="FGB-Co-ieW" eventType="touchUpInside" id="sLl-kF-mLE"/>
-                                    </connections>
-                                </button>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="jRD-N5-0oL" secondAttribute="trailing" constant="-20" id="6LN-xv-wdh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1bO-Sj-tVE" secondAttribute="trailing" constant="-20" id="Zkg-Ga-OkP"/>
-                            <constraint firstItem="YCg-zl-LPW" firstAttribute="top" secondItem="1bO-Sj-tVE" secondAttribute="bottom" id="ccX-Vr-6Ws"/>
-                            <constraint firstItem="1bO-Sj-tVE" firstAttribute="top" secondItem="jRD-N5-0oL" secondAttribute="bottom" id="fkx-2X-dKv"/>
-                            <constraint firstItem="jRD-N5-0oL" firstAttribute="leading" secondItem="89l-VN-3jp" secondAttribute="leadingMargin" constant="-20" id="m4H-nf-58d"/>
-                            <constraint firstItem="1bO-Sj-tVE" firstAttribute="leading" secondItem="89l-VN-3jp" secondAttribute="leadingMargin" constant="-20" id="sX0-Zz-fme"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="전체주문/검색" image="ic_search" selectedImage="ic_search_click" id="BaH-ud-uSs"/>
-                    <connections>
-                        <outlet property="loadOrder" destination="zO1-Fi-hI1" id="Gs3-7D-qcc"/>
-                        <outlet property="searchBarView" destination="jRD-N5-0oL" id="46x-CO-621"/>
-                        <outlet property="tableView" destination="1bO-Sj-tVE" id="s9E-Fs-RCL"/>
-                        <segue destination="4b3-Cl-do8" kind="show" identifier="modifyDateTime" id="SGC-rc-Kwr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NHF-nD-M75" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="749" y="-1065"/>
+            <point key="canvasLocation" x="813" y="-463"/>
         </scene>
         <!--Modify Date Time View Controller-->
         <scene sceneID="Chv-04-iWO">
@@ -297,102 +232,6 @@
                 </navigationBar>
             </objects>
             <point key="canvasLocation" x="1750" y="-401"/>
-        </scene>
-        <!--수거배정-->
-        <scene sceneID="wg7-f3-ORb">
-            <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
-                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfx-Bf-Cuy">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="수거 배정" id="2qN-53-ZLh"/>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FU4-9y-iuH">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="jfx-Bf-Cuy" secondAttribute="trailing" constant="-20" id="5Ax-eh-Frx"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="FU4-9y-iuH" secondAttribute="bottom" id="APp-fn-BQ9"/>
-                            <constraint firstItem="FU4-9y-iuH" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="44" id="Bms-Xg-1BV"/>
-                            <constraint firstItem="FU4-9y-iuH" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="c6D-mC-nbE"/>
-                            <constraint firstAttribute="trailing" secondItem="FU4-9y-iuH" secondAttribute="trailing" id="daF-04-56z"/>
-                            <constraint firstItem="jfx-Bf-Cuy" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-20" id="esO-1e-akc"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="수거배정" image="ic_assign" selectedImage="ic_assign_click" id="cPa-gy-q4n"/>
-                    <connections>
-                        <outlet property="tableView" destination="FU4-9y-iuH" id="svg-X6-IaS"/>
-                        <segue destination="4b3-Cl-do8" kind="show" identifier="modifyDateTimeA" id="HLy-CI-uw7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="749" y="419"/>
-        </scene>
-        <!--배달배정-->
-        <scene sceneID="nwB-vP-DYD">
-            <objects>
-                <viewController id="hTl-jA-PIW" customClass="ThirdViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6R3-U6-dCg"/>
-                        <viewControllerLayoutGuide type="bottom" id="ISH-Xa-XiS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="91K-DX-tQC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-Yv-ycM">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="배달 배정" id="Fbu-0a-flc"/>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zAS-P4-jSa">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="zAS-P4-jSa" firstAttribute="leading" secondItem="91K-DX-tQC" secondAttribute="leadingMargin" constant="-20" id="6Md-aA-I2p"/>
-                            <constraint firstAttribute="trailing" secondItem="zAS-P4-jSa" secondAttribute="trailing" id="A0l-4v-hLJ"/>
-                            <constraint firstItem="ISH-Xa-XiS" firstAttribute="top" secondItem="zAS-P4-jSa" secondAttribute="bottom" id="S4a-UG-PvS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zAS-P4-jSa" secondAttribute="trailing" constant="-20" id="Vog-QN-mLV"/>
-                            <constraint firstItem="JaP-Yv-ycM" firstAttribute="leading" secondItem="91K-DX-tQC" secondAttribute="leadingMargin" constant="-20" id="bSs-6m-hp9"/>
-                            <constraint firstItem="zAS-P4-jSa" firstAttribute="leading" secondItem="91K-DX-tQC" secondAttribute="leading" id="e4H-HU-bKX"/>
-                            <constraint firstItem="zAS-P4-jSa" firstAttribute="top" secondItem="6R3-U6-dCg" secondAttribute="bottom" constant="44" id="gNf-Mf-9Gf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JaP-Yv-ycM" secondAttribute="trailing" constant="-20" id="ihG-PD-fXz"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="배달배정" image="ic_assign" selectedImage="ic_assign_click" id="6Mf-Fx-V2Q"/>
-                    <connections>
-                        <outlet property="tableView" destination="zAS-P4-jSa" id="FFy-ED-dZ0"/>
-                        <segue destination="4b3-Cl-do8" kind="show" identifier="modifyDateTimeB" id="YoN-7S-rp8"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AB7-Qd-yeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="749" y="1167"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="gVs-yS-teU">
@@ -684,6 +523,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Kba-Gb-D4D"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -694,12 +534,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="FGB-Co-ieW" kind="relationship" relationship="viewControllers" id="Knb-ZH-oWP"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="hTl-jA-PIW" kind="relationship" relationship="viewControllers" id="x08-62-eZr"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18" y="0.0"/>
         </scene>
@@ -707,15 +543,8 @@
     <resources>
         <image name="bg_login_item" width="824" height="117"/>
         <image name="bg_signup" width="884" height="125"/>
-        <image name="ic_assign" width="83" height="63"/>
-        <image name="ic_assign_click" width="83" height="63"/>
         <image name="ic_order" width="44" height="60"/>
         <image name="ic_order_click" width="44" height="60"/>
-        <image name="ic_search" width="50" height="50"/>
-        <image name="ic_search_click" width="50" height="50"/>
         <image name="profile" width="324" height="322"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="HLy-CI-uw7"/>
-    </inferredMetricsTieBreakers>
 </document>
