@@ -37,6 +37,7 @@
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     UITextField *alertTextField = [alert textFieldAtIndex:0];
     alertTextField.placeholder = @"특이사항이 있으면 남겨주세요";
+    
     [alert show];
 }
 

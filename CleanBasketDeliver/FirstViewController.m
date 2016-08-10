@@ -10,6 +10,7 @@
 #import "ExpandingCell.h"
 #import "AFNetworking.h"
 #import "order.h"
+#import "MBProgressHUD.h"
 
 @interface FirstViewController () {
     AFHTTPRequestOperationManager *afManager;
@@ -92,6 +93,26 @@
     //Set index to -1 saying no cell is expanded or should expand.
     selectedIndex = -1;
 }
+
+- (IBAction)reload:(id)sender {
+    [self getData];
+    [self showHudMessage:@"로딩중입니다."];
+}
+
+- (void)showHudMessage:(NSString*)message {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    // Configure for text only and offset down
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = message;
+    [hud setLabelFont:[UIFont systemFontOfSize:14.0f]];
+    hud.margin = 10.f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:1];
+    
+    return;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -198,11 +219,11 @@
     
     NSTimeInterval diff = [now timeIntervalSinceDate:afterDate];
     
-    if (diff < 60000){
+    if (diff > -1800){
         cell.contactLabel.text = [order phone];
     } else {
         NSNumber *myDoubleNumber = [NSNumber numberWithDouble:diff];
-        cell.contactLabel.text = [myDoubleNumber stringValue];
+        cell.contactLabel.text = @"30분 전에 확인 가능합니다.";
     }
     cell.priceLabel.text = price;
     cell.itemLabel.text = [self getItemList:items];
