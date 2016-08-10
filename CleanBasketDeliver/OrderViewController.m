@@ -59,7 +59,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.searchBarView.delegate = self;
-    self.searchBarView.showsSearchResultsButton = YES;
+    
+    [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setTintColor:[UIColor whiteColor]];
     
     //Set index to -1 saying no cell is expanded or should expand.
     selectedIndex = -1;
@@ -70,6 +71,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [self.view endEditing:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

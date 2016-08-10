@@ -65,10 +65,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" placeholder="주문번호 / 전화번호 입력" translatesAutoresizingMaskIntoConstraints="NO" id="jRD-N5-0oL">
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" text="" placeholder="주문번호 / 전화번호 입력" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jRD-N5-0oL">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                     <string>Title</string>
@@ -716,6 +716,6 @@
         <image name="profile" width="324" height="322"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HLy-CI-uw7"/>
+        <segue reference="SGC-rc-Kwr"/>
     </inferredMetricsTieBreakers>
 </document>
