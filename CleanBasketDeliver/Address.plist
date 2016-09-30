@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ROOT</key>
-	<string>https://www.cleanbasket.co.kr/</string>
+	<string>https://www.cleanbasket.co.kr/wash-1.1.8/</string>
 	<key>LOGIN</key>
 	<string>auth</string>
 	<key>REGID</key>

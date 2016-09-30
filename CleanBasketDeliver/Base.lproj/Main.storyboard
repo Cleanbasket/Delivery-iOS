@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pxq-cj-paV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pxq-cj-paV">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--배정주문-->
@@ -15,26 +16,26 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qRH-gT-iva">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="JAB-tu-5c3">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="JAB-tu-5c3">
+                                <frame key="frameInset" minY="20" width="600" height="44"/>
+                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="배정 주문" id="WmC-d1-eEK"/>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qRH-gT-iva">
+                                <frame key="frameInset" minY="64" width="600" height="487"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="JAB-tu-5c3" secondAttribute="trailing" constant="-20" id="6MG-cy-eq8"/>
                             <constraint firstItem="qRH-gT-iva" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="44" id="8Nh-S3-5jP"/>
@@ -42,6 +43,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="qRH-gT-iva" secondAttribute="trailing" constant="-20" id="UgC-VL-AlA"/>
                             <constraint firstItem="qRH-gT-iva" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="qqe-Za-VLP"/>
                             <constraint firstItem="JAB-tu-5c3" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="r5V-V1-F9k"/>
+                            <constraint firstItem="JAB-tu-5c3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="rWt-R5-9VL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="배정주문" image="ic_order" selectedImage="ic_order_click" id="SM1-0x-Ref"/>
@@ -62,33 +64,33 @@
                         <viewControllerLayoutGuide type="bottom" id="YCg-zl-LPW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="89l-VN-3jp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" text="" placeholder="주문번호 / 전화번호 입력" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jRD-N5-0oL">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <searchBar contentMode="redraw" misplaced="YES" text="" placeholder="주문번호 / 전화번호 입력" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jRD-N5-0oL">
+                                <frame key="frameInset" minY="20" width="600" height="44"/>
+                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1bO-Sj-tVE">
-                                <rect key="frame" x="0.0" y="64" width="600" height="479"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexTrackingBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1bO-Sj-tVE">
+                                <frame key="frameInset" minY="64" width="600" height="479"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zO1-Fi-hI1">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="60" id="p7o-VZ-Anv"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <state key="normal" title="불러오기">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="loadOrder:" destination="FGB-Co-ieW" eventType="touchUpInside" id="sLl-kF-mLE"/>
@@ -96,9 +98,11 @@
                                 </button>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="jRD-N5-0oL" secondAttribute="trailing" constant="-20" id="6LN-xv-wdh"/>
+                            <constraint firstItem="1bO-Sj-tVE" firstAttribute="top" secondItem="bUS-xC-tUu" secondAttribute="bottom" constant="44" id="Ips-Bh-4F0"/>
+                            <constraint firstItem="jRD-N5-0oL" firstAttribute="top" secondItem="bUS-xC-tUu" secondAttribute="bottom" id="P1n-vR-FSH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1bO-Sj-tVE" secondAttribute="trailing" constant="-20" id="Zkg-Ga-OkP"/>
                             <constraint firstItem="YCg-zl-LPW" firstAttribute="top" secondItem="1bO-Sj-tVE" secondAttribute="bottom" id="ccX-Vr-6Ws"/>
                             <constraint firstItem="1bO-Sj-tVE" firstAttribute="top" secondItem="jRD-N5-0oL" secondAttribute="bottom" id="fkx-2X-dKv"/>
@@ -127,53 +131,53 @@
                         <viewControllerLayoutGuide type="bottom" id="ydt-OC-4z7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="y4p-AF-x0o">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="vOD-Tt-vF1">
-                                <rect key="frame" x="0.0" y="101" width="600" height="162"/>
+                                <frame key="frameInset" minY="101" width="600" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="459083300.33818001">
                                     <!--2015-07-20 11:08:20 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ko"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="수거 시간 변경" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4t-WI-yD9">
-                                <rect key="frame" x="249" y="72" width="100" height="21"/>
+                                <frame key="frameInset" minX="249" minY="72" width="100" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="QCT-yG-oaE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="배달 시간 변경" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20L-4K-34l">
-                                <rect key="frame" x="249" y="271" width="100" height="21"/>
+                                <frame key="frameInset" minX="249" minY="271" width="100" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="b2k-f6-eL0">
-                                <rect key="frame" x="0.0" y="300" width="600" height="162"/>
+                                <frame key="frameInset" minY="300" width="600" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="459089470.51586401">
                                     <!--2015-07-20 12:51:10 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ko"/>
                             </datePicker>
                             <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUd-2F-qDX">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <frame key="frameInset" minY="20" width="600" height="44"/>
+                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem id="eQm-r6-7RF">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="LLY-Cd-UFe">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Far-wg-pbh">
-                                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                                <rect key="frame" x="16" y="7" width="133" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="취소하기">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="cancleEvent:" destination="4b3-Cl-do8" eventType="touchUpInside" id="ll1-b7-jz4"/>
@@ -186,7 +190,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="변경하기">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="buttonModify:" destination="4b3-Cl-do8" eventType="touchUpInside" id="ZQs-K6-kEZ"/>
@@ -197,7 +201,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="20L-4K-34l" firstAttribute="top" secondItem="vOD-Tt-vF1" secondAttribute="bottom" constant="8" symbolic="YES" id="29M-HY-CfW"/>
                             <constraint firstItem="vOD-Tt-vF1" firstAttribute="leading" secondItem="y4p-AF-x0o" secondAttribute="leading" id="3yu-CY-a5f"/>
@@ -230,36 +234,40 @@
             <objects>
                 <tableViewController id="n0V-fO-rKa" customClass="ItemTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5JX-VE-YtP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itemCell" id="NgJ-Ua-prM" customClass="ItemCell">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NgJ-Ua-prM" id="YQN-BE-6ne">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="아이템" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xu-6T-GMV">
-                                            <rect key="frame" x="8" y="11" width="110" height="21"/>
+                                            <frame key="frameInset" minX="8" minY="11" width="110" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ctl-D5-Q2h">
-                                            <rect key="frame" x="273" y="7" width="94" height="29"/>
+                                            <frame key="frameInset" minX="273" minY="7" width="94" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </stepper>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyl-fz-D6a">
-                                            <rect key="frame" x="223" y="11" width="42" height="21"/>
+                                            <frame key="frameInset" minX="223" minY="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99999원" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RI-qH-yiR">
-                                            <rect key="frame" x="126" y="11" width="70" height="21"/>
+                                            <frame key="frameInset" minX="126" minY="11" width="70" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -285,9 +293,9 @@
                 <navigationBar contentMode="scaleToFill" id="ZGO-EM-0qj">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <textAttributes key="titleTextAttributes">
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </textAttributes>
                     <items>
                         <navigationItem title="품목수정" id="e9H-Zx-pgK">
@@ -307,29 +315,30 @@
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfx-Bf-Cuy">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfx-Bf-Cuy">
+                                <frame key="frameInset" minY="20" width="600" height="44"/>
+                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="수거 배정" id="2qN-53-ZLh"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FU4-9y-iuH">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FU4-9y-iuH">
+                                <frame key="frameInset" minY="64" width="600" height="487"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="jfx-Bf-Cuy" secondAttribute="trailing" constant="-20" id="5Ax-eh-Frx"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="FU4-9y-iuH" secondAttribute="bottom" id="APp-fn-BQ9"/>
                             <constraint firstItem="FU4-9y-iuH" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="44" id="Bms-Xg-1BV"/>
+                            <constraint firstItem="jfx-Bf-Cuy" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="Yde-8b-Ig7"/>
                             <constraint firstItem="FU4-9y-iuH" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="c6D-mC-nbE"/>
                             <constraint firstAttribute="trailing" secondItem="FU4-9y-iuH" secondAttribute="trailing" id="daF-04-56z"/>
                             <constraint firstItem="jfx-Bf-Cuy" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-20" id="esO-1e-akc"/>
@@ -354,27 +363,28 @@
                         <viewControllerLayoutGuide type="bottom" id="ISH-Xa-XiS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="91K-DX-tQC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-Yv-ycM">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-Yv-ycM">
+                                <frame key="frameInset" minY="20" width="600" height="44"/>
+                                <color key="barTintColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="배달 배정" id="Fbu-0a-flc"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zAS-P4-jSa">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zAS-P4-jSa">
+                                <frame key="frameInset" minY="64" width="600" height="487"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zAS-P4-jSa" firstAttribute="leading" secondItem="91K-DX-tQC" secondAttribute="leadingMargin" constant="-20" id="6Md-aA-I2p"/>
+                            <constraint firstItem="JaP-Yv-ycM" firstAttribute="top" secondItem="6R3-U6-dCg" secondAttribute="bottom" id="9ID-ws-U5o"/>
                             <constraint firstAttribute="trailing" secondItem="zAS-P4-jSa" secondAttribute="trailing" id="A0l-4v-hLJ"/>
                             <constraint firstItem="ISH-Xa-XiS" firstAttribute="top" secondItem="zAS-P4-jSa" secondAttribute="bottom" id="S4a-UG-PvS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zAS-P4-jSa" secondAttribute="trailing" constant="-20" id="Vog-QN-mLV"/>
@@ -403,48 +413,48 @@
                         <viewControllerLayoutGuide type="bottom" id="f1I-0N-3uu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hYO-Pn-sFC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liP-B6-whL">
-                                <rect key="frame" x="163" y="480" width="287" height="46"/>
-                                <color key="backgroundColor" red="0.36470588240000001" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <frame key="frameInset" minX="163" minY="480" width="287" height="46"/>
+                                <color key="backgroundColor" red="0.36470588240000001" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="EQw-5I-61E"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="287" id="EkG-ws-sSa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="이메일로 로그인">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="show" identifier="loginToList" id="IgN-CO-ZTj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okp-f6-aOo">
-                                <rect key="frame" x="162" y="534" width="287" height="46"/>
-                                <color key="backgroundColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <frame key="frameInset" minX="162" minY="534" width="287" height="46"/>
+                                <color key="backgroundColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="287" id="Gq4-7a-ynn"/>
                                     <constraint firstAttribute="height" constant="46" id="o0z-YK-6lT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="크린파트너 등록">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="tDv-Ju-ORy" kind="show" id="H6X-YN-MUP"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디" textAlignment="center" minimumFontSize="17" background="bg_login_item" translatesAutoresizingMaskIntoConstraints="NO" id="74x-uA-oj6">
-                                <rect key="frame" x="163" y="372" width="288" height="46"/>
+                                <frame key="frameInset" minX="163" minY="372" width="288" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="ZPq-Ke-kcF"/>
                                     <constraint firstAttribute="height" constant="40" id="iVh-i1-P02"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -453,12 +463,12 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" background="bg_login_item" translatesAutoresizingMaskIntoConstraints="NO" id="Jz3-cz-L5f">
-                                <rect key="frame" x="163" y="426" width="288" height="46"/>
+                                <frame key="frameInset" minX="163" minY="426" width="288" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FMK-Zb-hJ2"/>
                                     <constraint firstAttribute="width" constant="288" id="aDG-Vy-I52"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
@@ -467,8 +477,8 @@
                                 </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.36470588240000001" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.36470588240000001" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="okp-f6-aOo" firstAttribute="top" secondItem="liP-B6-whL" secondAttribute="bottom" constant="10" id="GPU-xd-nwP"/>
                             <constraint firstItem="Jz3-cz-L5f" firstAttribute="centerX" secondItem="hYO-Pn-sFC" secondAttribute="centerX" id="La8-yc-DDS"/>
@@ -499,26 +509,26 @@
                         <viewControllerLayoutGuide type="bottom" id="EvL-K2-IEa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ktx-MC-iCs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2h-gj-omc">
-                                <rect key="frame" x="105" y="219" width="170" height="45"/>
-                                <color key="backgroundColor" red="0.49019607843137253" green="0.74901960784313726" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                                <frame key="frameInset" minX="105" minY="219" width="170" height="45"/>
+                                <color key="backgroundColor" red="0.49019607843137253" green="0.74901960784313726" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="sp0-JU-YG3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="직접 찍기">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="TakePhoto" destination="lTs-Yn-rTY" eventType="touchUpInside" id="IeA-hL-bZj"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="center" minimumFontSize="17" background="bg_signup" translatesAutoresizingMaskIntoConstraints="NO" id="PP3-hL-h1z">
-                                <rect key="frame" x="43" y="291" width="515" height="30"/>
+                                <frame key="frameInset" minX="43" minY="291" width="515" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="lgn-PZ-gF2"/>
                                 </constraints>
@@ -526,7 +536,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" background="bg_signup" translatesAutoresizingMaskIntoConstraints="NO" id="kFa-wA-Thv">
-                                <rect key="frame" x="43" y="338" width="515" height="30"/>
+                                <frame key="frameInset" minX="43" minY="338" width="515" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="IXO-vJ-kQ9"/>
                                 </constraints>
@@ -534,7 +544,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름" textAlignment="center" minimumFontSize="17" background="bg_signup" translatesAutoresizingMaskIntoConstraints="NO" id="8nL-dK-F39">
-                                <rect key="frame" x="43" y="433" width="515" height="30"/>
+                                <frame key="frameInset" minX="43" minY="433" width="515" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Ojl-c2-dFI"/>
                                 </constraints>
@@ -546,37 +556,37 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMf-6o-9hO">
-                                <rect key="frame" x="280" y="497" width="170" height="45"/>
-                                <color key="backgroundColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <frame key="frameInset" minX="280" minY="497" width="170" height="45"/>
+                                <color key="backgroundColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="nmH-fH-KLq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="등록하기">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="tryRegister:" destination="tDv-Ju-ORy" eventType="touchUpInside" id="PP1-GE-R68"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lf-io-O5M">
-                                <rect key="frame" x="105" y="497" width="170" height="45"/>
-                                <color key="backgroundColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <frame key="frameInset" minX="105" minY="497" width="170" height="45"/>
+                                <color key="backgroundColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="1V6-NU-xA7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="취소하기">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="cancle:" destination="tDv-Ju-ORy" eventType="touchUpInside" id="rN2-fo-9so"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="핸드폰 번호" textAlignment="center" minimumFontSize="17" background="bg_signup" translatesAutoresizingMaskIntoConstraints="NO" id="T03-32-iP8">
-                                <rect key="frame" x="43" y="386" width="515" height="30"/>
+                                <frame key="frameInset" minX="43" minY="386" width="515" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="0X2-Ye-afx"/>
                                 </constraints>
@@ -588,56 +598,56 @@
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="x9z-as-Foq">
-                                <rect key="frame" x="36" y="95" width="100" height="100"/>
+                                <frame key="frameInset" minX="36" minY="95" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="3Ik-IP-tdI"/>
                                     <constraint firstAttribute="width" constant="100" id="ahL-ML-8GR"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="고객에게 보이는 사진입니다. 반드시 본인 얼굴이 잘 나온 사진을 선택해주세요." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="laf-EA-gcN">
-                                <rect key="frame" x="150" y="95" width="430" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <frame key="frameInset" minX="150" minY="95" width="430" height="100"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="430" id="IgD-gZ-54i"/>
                                     <constraint firstAttribute="height" constant="100" id="esO-Zf-byP"/>
                                 </constraints>
-                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="435-Bk-qXb">
-                                <rect key="frame" x="280" y="219" width="170" height="45"/>
-                                <color key="backgroundColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <frame key="frameInset" minX="280" minY="219" width="170" height="45"/>
+                                <color key="backgroundColor" red="0.49019607840000001" green="0.74901960779999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="XmW-qy-ssd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="사진 선택">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="ChooseExisting" destination="lTs-Yn-rTY" eventType="touchUpInside" id="6wu-Ut-2pD"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUX-ua-iwM">
-                                <rect key="frame" x="271" y="219" width="14" height="50"/>
+                                <frame key="frameInset" minX="271" minY="219" width="14" height="50"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IRI-dE-zMt">
-                                <rect key="frame" x="271" y="497" width="14" height="50"/>
+                                <frame key="frameInset" minX="271" minY="497" width="14" height="50"/>
                             </view>
                             <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moI-cb-Uuw">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.36470588240000001" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <frame key="frameInset" minY="20" width="600" height="44"/>
+                                <color key="barTintColor" red="0.36470588240000001" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="크린파트너 등록" id="zBk-U6-s8u"/>
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="T03-32-iP8" firstAttribute="centerX" secondItem="ktx-MC-iCs" secondAttribute="centerX" id="0lI-Hd-Tmz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="laf-EA-gcN" secondAttribute="trailing" id="7dG-3a-08O"/>
@@ -690,7 +700,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -705,15 +715,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg_login_item" width="824" height="117"/>
-        <image name="bg_signup" width="884" height="125"/>
-        <image name="ic_assign" width="83" height="63"/>
-        <image name="ic_assign_click" width="83" height="63"/>
-        <image name="ic_order" width="44" height="60"/>
-        <image name="ic_order_click" width="44" height="60"/>
-        <image name="ic_search" width="50" height="50"/>
-        <image name="ic_search_click" width="50" height="50"/>
-        <image name="profile" width="324" height="322"/>
+        <image name="bg_login_item" width="412" height="58"/>
+        <image name="bg_signup" width="442" height="62"/>
+        <image name="ic_assign" width="41" height="31"/>
+        <image name="ic_assign_click" width="41" height="31"/>
+        <image name="ic_order" width="22" height="30"/>
+        <image name="ic_order_click" width="22" height="30"/>
+        <image name="ic_search" width="25" height="25"/>
+        <image name="ic_search_click" width="25" height="25"/>
+        <image name="profile" width="162" height="161"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="SGC-rc-Kwr"/>

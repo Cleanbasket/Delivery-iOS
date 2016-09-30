@@ -344,6 +344,7 @@
 				147BCA091B1D7574008A3404 /* Resources */,
 				559E2CC7CF490208744DE841 /* [CP] Embed Pods Frameworks */,
 				11212550CC259B998820DE3B /* [CP] Copy Pods Resources */,
+				074633A8260455176D4A7843 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -448,6 +449,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		074633A8260455176D4A7843 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CleanBasketDeliver/Pods-CleanBasketDeliver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		11212550CC259B998820DE3B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
