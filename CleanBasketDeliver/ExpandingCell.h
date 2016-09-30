@@ -31,4 +31,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *mileageLabel;
 @property (weak, nonatomic) IBOutlet UIButton *buttonFinish;
 
+- (void) showErrorMessageAlert:(NSString *) msg;
+
 @end

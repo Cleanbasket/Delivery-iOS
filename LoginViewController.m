@@ -60,10 +60,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)buttonLogin:(id)sender {
-    
-}
-
 - (NSString *)getUserDefault {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
