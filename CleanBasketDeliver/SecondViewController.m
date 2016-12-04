@@ -100,6 +100,8 @@
         cell.mileageLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
         cell.dropOffDateLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
         cell.noteLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.otherType.textColor =[UIColor colorWithRed:0.49 green:0.75 blue:0.78 alpha:1.0];
+
     }
     else {
         if (state == 1 || state == 3){
@@ -116,6 +118,7 @@
             cell.mileageLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
             cell.dropOffDateLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
             cell.noteLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.otherType.textColor =[UIColor colorWithRed:0.49 green:0.75 blue:0.78 alpha:1.0];
         }
         else{
             cell.contentView.backgroundColor = [UIColor whiteColor];
@@ -131,6 +134,7 @@
             cell.mileageLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
             cell.dropOffDateLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
             cell.noteLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+            cell.otherType.textColor =[UIColor colorWithRed:0.49 green:0.75 blue:0.78 alpha:1.0];
         }
     }
     
@@ -159,6 +163,7 @@
     NSString *datetime = [[order objectForKey:@"pickup_date"] substringWithRange:needleRange];
     NSArray<Coupon> *coupons = [[dataPickUpArray objectAtIndex:indexPath.row] objectForKey:@"coupon"];
 
+    cell.otherType.text = @"배달시간";
     cell.datetimeLabel.text = datetime;
     cell.orderNumberLabel.text = [order objectForKey:@"order_number"];
     cell.addressLabel.text = [NSString stringWithFormat:@"%@ %@ %@ %@", address, addr_building, addr_number, addr_remainder];

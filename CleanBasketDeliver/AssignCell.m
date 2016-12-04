@@ -18,7 +18,7 @@
 @end
 
 @implementation AssignCell
-@synthesize typeLabel, datetimeLabel, orderNumberLabel, addressLabel, contactLabel, priceLabel, itemLabel, memoLabel, noteLabel, dropOffDateLabel;
+@synthesize typeLabel, datetimeLabel, orderNumberLabel, addressLabel, contactLabel, priceLabel, itemLabel, memoLabel, noteLabel, dropOffDateLabel,otherType;
 
 - (IBAction)assign:(id)sender {
     NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];

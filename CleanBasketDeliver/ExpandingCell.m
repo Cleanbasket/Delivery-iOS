@@ -18,7 +18,7 @@
 @end
 
 @implementation ExpandingCell
-@synthesize typeLabel, datetimeLabel, orderNumberLabel, addressLabel, contactLabel, priceLabel, itemLabel, memoLabel, noteLabel;
+@synthesize typeLabel, datetimeLabel, orderNumberLabel, addressLabel, contactLabel, priceLabel, itemLabel, memoLabel, noteLabel, otherTime, otherType;
 
 - (IBAction)buttonFinish:(id)sender {
     if (self.tag > 2) {
@@ -80,7 +80,7 @@
 }
 
 - (void) showErrorMessageAlert:(NSString *) msg {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"실패"
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"결제 결과"
                                                    message:msg
                                                   delegate:nil
                                          cancelButtonTitle:nil
@@ -89,6 +89,9 @@
 }
 
 - (void) sendPickupConfirmData:(NSDictionary *) parameters{
+    
+    
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
         NSString *path = [[NSBundle mainBundle] pathForResource: @"Address" ofType: @"plist"];
@@ -112,12 +115,11 @@
                 }
                 case CBServerConstantError:
                 {
-                    [self showErrorMessageAlert:responseObject[@"message"]];
+                    [self showErrorAlert];
                     break;
                 }
             }
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            [self showErrorMessageAlert:[error description]];
             NSLog(@"%@", [error description]);
         }];
     });
@@ -168,27 +170,32 @@
     NSArray* array = [[orderNumberLabel text] componentsSeparatedByString: @"-"];
     NSString *oid = [array objectAtIndex:1];
     
-    
-    NSDictionary *parameters = @{@"oid":oid, @"price":[[alertView textFieldAtIndex:1] text], @"note":[[alertView textFieldAtIndex:0] text], @"payment_method":[NSString stringWithFormat:@"%ld", (long) (buttonIndex)]};
-    
-    
-    
-    if (buttonIndex > 0 && self.tag > 2) {
-        NSLog(@"dropoff");
+    if (buttonIndex > 0){
         
-        NSLog(@"Button indext is %ld", (long) buttonIndex);
-        
-        
-        if([[[alertView textFieldAtIndex:1] text] isEqualToString:@""]){
-            [self showErrorMessageAlert:@"결제 금액을 반드시 입력해주세요."];
-            return;
+        if (self.tag > 2) {
+            
+            NSDictionary *parameters = @{@"oid":oid, @"price":[[alertView textFieldAtIndex:1] text], @"note":[[alertView textFieldAtIndex:0] text], @"payment_method":[NSString stringWithFormat:@"%ld", (long) (buttonIndex)]};
+            
+            
+            NSLog(@"dropoff");
+            
+            NSLog(@"Button indext is %ld", (long) buttonIndex);
+            
+            
+            if([[[alertView textFieldAtIndex:1] text] isEqualToString:@""]){
+                [self showErrorMessageAlert:@"결제 금액을 반드시 입력해주세요."];
+                return;
+            }
+            
+            [self sendDropoffConfirmData:parameters];
+            
+        } else {
+            
+            NSDictionary *parameters = @{@"oid":oid, @"note":[[alertView textFieldAtIndex:0] text]};
+            
+            NSLog(@"pickup");
+            [self sendPickupConfirmData:parameters];
         }
-        
-        [self sendDropoffConfirmData:parameters];
-        
-    }else if (buttonIndex > 0){
-        NSLog(@"pickup");
-        [self sendPickupConfirmData:parameters];
     }
 }
 

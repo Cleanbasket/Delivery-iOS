@@ -30,5 +30,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *couponLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mileageLabel;
 @property (weak, nonatomic) IBOutlet UIButton *modifyButton;
+@property (weak, nonatomic) IBOutlet UILabel *otherType;
 
 @end

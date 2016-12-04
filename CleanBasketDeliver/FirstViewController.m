@@ -128,6 +128,8 @@
         cell.noteLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
         cell.couponLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
         cell.mileageLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.otherTime.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+        cell.otherType.textColor = [UIColor colorWithRed:0.49 green:0.75 blue:0.78 alpha:1.0];
     }
     else {
         if (state == 2 || state == 4){
@@ -143,6 +145,8 @@
             cell.couponLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
             cell.mileageLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
             cell.noteLabel.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.otherTime.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
+            cell.otherType.textColor = [UIColor colorWithRed:0.74 green:0.74 blue:0.74 alpha:1.0];
         }
         else{
             cell.contentView.backgroundColor = [UIColor whiteColor];
@@ -157,14 +161,19 @@
             cell.couponLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
             cell.mileageLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
             cell.noteLabel.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+            cell.otherTime.textColor = [UIColor colorWithRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+            cell.otherType.textColor = [UIColor colorWithRed:0.49 green:0.75 blue:0.78 alpha:1.0];
         }
     }
     
-    if (state < 3)
+    if (state < 3){
         cell.typeLabel.text = @"수거";
-    else
+        cell.otherType.text = @"배달시간";
+    }
+    else{
+        cell.otherType.text = @"수거시간";
         cell.typeLabel.text = @"배달";
-    
+    }
     NSString *price;
     if ([order payment_method] == 3) {
         price = [NSString stringWithFormat:@"인앱 %d", (int) [order price]];
@@ -180,8 +189,16 @@
     NSRange needleRange = NSMakeRange(0, 16);
     
     NSString *datetime;
-    if (state < 3) datetime = [[order pickup_date] substringWithRange:needleRange];
-    else datetime = [[order dropoff_date] substringWithRange:needleRange];
+    NSString *otherDatetime;
+    if (state < 3) {
+        datetime = [[order pickup_date] substringWithRange:needleRange];
+        otherDatetime = [[order dropoff_date] substringWithRange:needleRange];
+     }
+    else {
+        datetime = [[order dropoff_date] substringWithRange:needleRange];
+        otherDatetime = [[order pickup_date] substringWithRange:needleRange];
+        
+    }
     
     NSArray<Item> *items = [order item];
     
@@ -195,6 +212,7 @@
     cell.noteLabel.text = [order note];
     cell.couponLabel.text = [self getCouponList:[order coupon]];
     cell.mileageLabel.text = [NSString stringWithFormat:@"마일리지 %d", (int) [order mileage]];
+    cell.otherTime.text = otherDatetime;
     cell.tag = state;
     
     cell.clipsToBounds = YES;
